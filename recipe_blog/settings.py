@@ -27,7 +27,14 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-noahdr17-recipeblog-2rcoa08d5it.ws-eu116.gitpod.io']
+ALLOWED_HOSTS = ['8000-noahdr17-recipeblog-0q42eit5qf9.ws-eu116.gitpod.io',
+    'localhost']
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-noahdr17-recipeblog-0q42eit5qf9.ws-eu116.gitpod.io',
+    ]
+
+SITE_ID = 1
 
 
 # Application definition
@@ -39,6 +46,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Allauth
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
 
     # Apps 
     'home',
@@ -52,7 +64,16 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # allauth
+    'allauth.account.middleware.AccountMiddleware',
+
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',  # Default backend
+    'allauth.account.auth_backends.AuthenticationBackend',  #  Allauth backend
+)
 
 ROOT_URLCONF = 'recipe_blog.urls'
 
@@ -106,6 +127,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+ACCOUNT_EMAIL_VERIFICATION = "none"
+LOGIN_REDIRECT_URL = '/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/

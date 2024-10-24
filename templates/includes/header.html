@@ -14,25 +14,22 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Placeholder</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="#">Recipes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Add Recipe</a>
+            <a class="nav-link" href="#">Add</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Account
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Sign In</a></li>
-              <li><a class="dropdown-item" href="#">Sign Out</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Register</a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="/accounts/signup/">Sign Up</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/accounts/login/">Sign In</a>
+          </li>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="/accounts/logout/">Log Out</a>
+          </li>
+          {% endif %}
         </ul>
         <!-- Search Bar -->
         <form class="d-flex" role="search">
