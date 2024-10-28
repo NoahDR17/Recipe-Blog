@@ -17,12 +17,16 @@
             <a class="nav-link" href="{% url 'add_recipe' %}">Add a Recipe</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{% url 'recipe_list' %}">View All Recipes</a>
+          </li>
+          {% if user.is_authenticated == False %}
+          <li class="nav-item">
             <a class="nav-link" href="/accounts/signup/">Sign Up</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/accounts/login/">Sign In</a>
           </li>
-          {% if user.is_authenticated %}
+          {% else %}
           <li class="nav-item">
             <a class="nav-link" href="/accounts/logout/">Log Out</a>
           </li>
