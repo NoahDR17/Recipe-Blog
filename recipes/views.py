@@ -56,7 +56,12 @@ class RecipeDeleteView(LoginRequiredMixin, DeleteView):
     def get_success_url(self):
         return reverse_lazy('recipe_list')
 
-
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        self.object.review_set.all().delete()
+        self.object.delete()
+        return redirect(self.get_success_url())
+        
 class RateRecipeView(LoginRequiredMixin, View):
     def post(self, request, recipe_id):
         rating_value = request.POST.get('rating')

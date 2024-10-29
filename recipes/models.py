@@ -30,6 +30,11 @@ class Recipe(models.Model):
             return reviews.aggregate(Avg('rating'))['rating__avg']
         return 0
 
+    def delete(self, *args, **kwargs):
+        # Delete all related reviews before deleting the recipe
+        self.review_set.all().delete() 
+        super().delete(*args, **kwargs)  
+
     def __str__(self):
         return str(self.title)
 
@@ -41,3 +46,8 @@ class Review(models.Model):
 
     class Meta:
         unique_together = ('user', 'recipe')  # Prevent multiple reviews from the same user
+
+class Rating(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
+    score = models.IntegerField()  
