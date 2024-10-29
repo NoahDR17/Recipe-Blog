@@ -1,5 +1,6 @@
-from django.views.generic import CreateView, ListView, DetailView
+from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from .models import Recipe
 from .forms import RecipeForm
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -35,3 +36,21 @@ def profile_view(request):
     """ View to display user profile with their recipes """
     user_recipes = Recipe.objects.filter(author=request.user)  
     return render(request, 'recipes/profile.html', {'user': request.user, 'user_recipes': user_recipes})
+
+
+class RecipeUpdateView(LoginRequiredMixin, UpdateView):
+    model = Recipe
+    template_name = 'recipes/edit_recipe.html'
+    fields = ['title', 'description', 'ingredients', 'instructions', 'calories']
+    context_object_name = 'recipe'
+
+    def get_success_url(self):
+        return reverse_lazy('recipe_detail', kwargs={'pk': self.object.pk})
+
+class RecipeDeleteView(LoginRequiredMixin, DeleteView):
+    model = Recipe
+    template_name = 'recipes/recipe_confirm_delete.html'
+    context_object_name = 'recipe'
+
+    def get_success_url(self):
+        return reverse_lazy('recipe_list')
