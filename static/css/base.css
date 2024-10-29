@@ -102,6 +102,11 @@ footer .item  {
     border-radius: 5px;
 }
 
+/* Recipe list */
+.recipe_list {
+    list-style-type: none;
+}
+
 /* code to animate an image to spin */
 
 .spin {

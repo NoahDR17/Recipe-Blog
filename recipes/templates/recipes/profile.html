@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<div class="container p-2">
+    <h1>{{ user.username|capfirst }}'s Profile</h1>
+    <p>Email: {{ user.email }}</p>
+    <p>Joined on: {{ user.date_joined }}</p>
+</div>
+
+<div class="container p-2">
+    <h2>Your Recipes: {{ user_recipes.count }}</h2>
+
+    <!-- Button to toggle the dropdown -->
+    <button id="dropdownButton" class="btn btn-secondary" onclick="toggleDropdown()">
+        View Your Recipes
+    </button>
+    <!-- Dropdown menu -->
+    <div id="dropdownMenu" class="dropdown-menu" style="display: none;">
+        {% if user_recipes %}
+        <ul>
+            {% for recipe in user_recipes %}
+            <li>
+                <a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        <hr>
+        {% else %}
+        <p>No recipes found.</p>
+        {% endif %}
+    </div>
+    <a href="{% url 'add_recipe' %}" class="btn btn-primary">Add New Recipe</a>
+</div>
+
+{% endblock %}
