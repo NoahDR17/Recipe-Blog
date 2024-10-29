@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-noahdr17-recipeblog-0q42eit5qf9.ws-eu116.gitpod.io',
     'localhost']
@@ -64,6 +64,9 @@ INSTALLED_APPS = [
     # Other 
     'crispy_forms',
     'crispy_bootstrap5',
+
+    #Deployment
+    '.herokuapp.com',
 ]
 
 MIDDLEWARE = [
