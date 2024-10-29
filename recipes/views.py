@@ -1,11 +1,12 @@
 from django.views.generic import CreateView, ListView, DetailView, UpdateView, DeleteView
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
-from .models import Recipe
+from .models import Recipe, Review 
 from .forms import RecipeForm
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
-
+from django.views import View
 
 class AddRecipe(LoginRequiredMixin, CreateView):
     """ Add Recipe View """
@@ -54,3 +55,18 @@ class RecipeDeleteView(LoginRequiredMixin, DeleteView):
 
     def get_success_url(self):
         return reverse_lazy('recipe_list')
+
+
+class RateRecipeView(LoginRequiredMixin, View):
+    def post(self, request, recipe_id):
+        rating_value = request.POST.get('rating')
+        recipe = get_object_or_404(Recipe, id=recipe_id)
+
+
+        Review.objects.update_or_create(
+            user=request.user,
+            recipe=recipe,
+            defaults={'rating': rating_value}
+        )
+
+        return redirect('recipe_detail', pk=recipe_id)

@@ -9,16 +9,34 @@
     <p><strong>Ingredients:</strong> {{ recipe.ingredients }}</p>
     <p><strong>Instructions:</strong> {{ recipe.instructions }}</p>
     <p><strong>Calories:</strong> {{ recipe.calories }}</p>
-    
+
+    <h5>Average Rating: {{ recipe.average_rating }}</h5>
+
+    {% if recipe.author != user %}
+    <form action="{% url 'rate_recipe' recipe.id %}" method="POST">
+        {% csrf_token %}
+        <select name="rating">
+            <option value="1">1 Star</option>
+            <option value="2">2 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="5">5 Stars</option>
+        </select>
+        <button type="submit">Leave a Review</button>
+
+    </form>
+    {% endif %}
+
     {% if recipe.author == user %}
-        <!-- Edit Recipe Button -->
-        <a href="{% url 'edit_recipe' recipe.id %}" class="btn btn-warning">Edit Recipe</a>
-        
-        <!-- Delete Recipe Button -->
-        <form action="{% url 'delete_recipe' recipe.id %}" method="POST" style="display:inline;">
-            {% csrf_token %}
-            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this recipe?');">Delete Recipe</button>
-        </form>
+    <!-- Edit Recipe Button -->
+    <a href="{% url 'edit_recipe' recipe.id %}" class="btn btn-warning">Edit Recipe</a>
+
+    <!-- Delete Recipe Button -->
+    <form action="{% url 'delete_recipe' recipe.id %}" method="POST" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger"
+            onclick="return confirm('Are you sure you want to delete this recipe?');">Delete Recipe</button>
+    </form>
     {% endif %}
 </div>
 {% endblock %}
