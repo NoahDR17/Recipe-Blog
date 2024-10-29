@@ -9,6 +9,7 @@
     <div class="container p-2">
         <li>
             <h2>{{ recipe.title }}</h2>
+            <p>Created by: {{ recipe.author.username }}</p>
             <p>{{ recipe.description }}</p>
             <p>Calories: {{ recipe.calories }}</p>
             <a href="{% url 'recipe_detail' recipe.id %}">View Details</a>

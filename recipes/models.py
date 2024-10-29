@@ -7,6 +7,12 @@ class Recipe(models.Model):
     """
     The model to create recipes
     """
+    MEAL_TYPE_CHOICES = [
+        ('breakfast', 'Breakfast'),
+        ('lunch', 'Lunch'),
+        ('dinner', 'Dinner'),
+    ]
+
     title = models.CharField(max_length=250, blank=False, null=False,  unique=False)
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="recipe_author")
@@ -15,6 +21,8 @@ class Recipe(models.Model):
     instructions = models.CharField(max_length=10000, null=False, blank=False)
     calories = models.IntegerField()
     created_on = models.DateTimeField(auto_now_add=True)
+    meal_type = models.CharField(max_length=10, choices=MEAL_TYPE_CHOICES, default='breakfast')
+
 
     def average_rating(self):
         reviews = Review.objects.filter(recipe=self)

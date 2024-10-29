@@ -10,6 +10,7 @@ class RecipeForm(forms.ModelForm):
             "description",
             "instructions",
             "ingredients",
+            "meal_type",
             "calories",
         ]
     
@@ -18,6 +19,7 @@ class RecipeForm(forms.ModelForm):
             "description": "Description",
             "ingredients": "Recipe Ingredients",
             "instructions": "Recipe Instructions",
+            "meal_type": "Meal Type",
             "calories": "Calories",
         }
 
