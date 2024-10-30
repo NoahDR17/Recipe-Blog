@@ -5,12 +5,14 @@
 {% block content %}
 <div class="container p-2">
     <h1>{{ recipe.title }}</h1>
+    <p>Created by: {{ recipe.author.username }}</p>
+    <p><strong>Meal Type:</strong> {{ recipe.meal_type }}</p>
     <p>{{ recipe.description }}</p>
     <p><strong>Ingredients:</strong> {{ recipe.ingredients }}</p>
     <p><strong>Instructions:</strong> {{ recipe.instructions }}</p>
     <p><strong>Calories:</strong> {{ recipe.calories }}</p>
 
-    <h5>Average Rating: {{ recipe.average_rating }}</h5>
+    <h5>Average Rating: {{ recipe.average_rating|floatformat:0 }}/5</h5>
 
     {% if recipe.author != user %}
     <form action="{% url 'rate_recipe' recipe.id %}" method="POST">
