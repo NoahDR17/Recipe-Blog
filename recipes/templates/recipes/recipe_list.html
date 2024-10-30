@@ -3,21 +3,25 @@
 {% block title %}View Recipes{% endblock %}
 
 {% block content %}
-<h1 class="text-center pt-2">All Recipes</h1>
-<ul>
-    {% for recipe in recipes %}
-    <div class="container p-2">
-        <li>
-            <h2>{{ recipe.title }}</h2>
-            <p>Created by: {{ recipe.author.username }}</p>
-            <p><strong>Meal Type:</strong> {{ recipe.meal_type }}</p>
-            <p>{{ recipe.description }}</p>
-            <p>Calories: {{ recipe.calories }}</p>
-            <a href="{% url 'recipe_detail' recipe.id %}">View Details</a>
-        </li>
+<div class="container pt-3">
+    <h1 class="pb-3">All Recipes</h1>
+    <div class="row">
+        {% for recipe in recipes %}
+        <div class="col-md-6 col-lg-4 p-2">
+            <div class="form-container p-3">
+                <h2 class="text-white">{{ recipe.title }}</h2>
+                <p class="text-white"><strong>Created by:</strong> {{ recipe.author.username }}</p>
+                <p class="text-white"><strong>Meal Type:</strong> {{ recipe.meal_type }}</p>
+                <p class="text-white"><strong>Description:</strong> {{ recipe.description }}</p>
+                <p class="text-white"><strong>Calories:</strong> {{ recipe.calories }}</p>
+                <a href="{% url 'recipe_detail' recipe.id %}" class="btn btn-primary custom-btn mt-2">View Details</a>
+            </div>
+        </div>
+        {% empty %}
+        <div class="text-center">
+            <p class="text-white">No recipes available.</p>
+        </div>
+        {% endfor %}
     </div>
-    {% empty %}
-        <li>No recipes available.</li>
-    {% endfor %}
-</ul>
+</div>
 {% endblock %}

@@ -21,7 +21,8 @@
 }
 
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -42,7 +43,13 @@ main {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6, li {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li {
     color: var(--heading-color);
     font-family: 'Playfair Display', serif;
     margin: 0 0 1rem 0;
@@ -72,8 +79,8 @@ p {
 }
 
 .nav-hover-effect .nav-link.active {
-    color: var(--accent-color); 
-    border-bottom: 3px solid var(--accent-color); 
+    color: var(--accent-color);
+    border-bottom: 3px solid var(--accent-color);
     border-radius: 3px;
 }
 
@@ -123,6 +130,7 @@ p {
 .recipe-span {
     color: var(--white);
 }
+
 /* About Us Section */
 .about-us-section {
     background-color: var(--deep-navy);
@@ -137,7 +145,7 @@ p {
 }
 
 .about-us-section h2 {
-    color: var(--accent-color); 
+    color: var(--accent-color);
     margin-bottom: 20px;
 }
 
@@ -203,46 +211,74 @@ p {
 }
 
 .form-container {
-    background-color: var(--deep-navy) !important; 
+    background-color: var(--deep-navy) !important;
     padding: 20px;
-    border-radius: 8px;
+    color: var(--white);
 }
+
+.form-container h1 {
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
 .form-check .form-check-input {
     float: none;
 }
 
-.form-container label,
-.form-container input,
 .form-container button,
 .form-container p {
-    color: #ffffff !important; /* White text */
-}
-
-.form-container input::placeholder {
-    color: #e0e0e0 !important; /* Light gray for placeholder text */
+    color: var(--white) !important;
 }
 
 .form-container input {
-    color: var(--deep-navy) !important; 
+    color: var(--deep-navy) !important;
 }
 
 .form-container input::placeholder {
-    color: var(--deep-navy) !important; 
+    color: var(--deep-navy) !important;
 }
 
 form li {
     color: var(--white);
     text-align: left;
 }
-/* Sign out */
-sign-out h1{
-    color: var(--white);
-}
+
 /* Recipe List */
 .recipe_list {
     list-style-type: none;
 }
 
+/* Add a recipe */
+.custom-btn {
+    border: 2px solid #ffffff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-btn:hover {
+    background-color: #FF6F61;
+    transform: scale(1.05);
+}
+
+/* Recipe List */
+.form-container {
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container:hover {
+    transform: scale(1.02);
+}
+
+/* Dropdown Menu Styling */
+.dropdown-item {
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: var(--accent-color);
+}
 /* Spin Animation */
 .spin {
     animation: spin 10s linear infinite;
@@ -252,6 +288,7 @@ sign-out h1{
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
@@ -262,21 +299,23 @@ sign-out h1{
     display: none;
 }
 
-/* Responsive Styles for Medium to Large Screens */
+.profile-recipes-container {
+    display: block;
+}
+
 @media (min-width: 1200px) {
     .about-us-section {
         flex-direction: row;
-        justify-content: space-between;        
+        justify-content: space-between;
     }
 
     .about-text {
-        flex: 0 0 50%; 
+        flex: 0 0 50%;
         max-width: 50%;
         padding-right: 20px;
         align-items: flex-start;
     }
 
-    /* Show About Us Image for Screen Size 1024px and Above */
     .about-us-image-container {
         display: block;
         flex: 0 0 50%;
@@ -290,9 +329,7 @@ sign-out h1{
     }
 }
 
-/* Responsive Styles for Small Screens */
 @media (max-width: 1024px) {
-    /* Remove underline for active nav items on smaller screens */
     .nav-hover-effect .nav-link.active {
         border-bottom: none;
     }
@@ -304,5 +341,23 @@ sign-out h1{
 
     .about-us-section {
         padding-bottom: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .profile-recipes-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .profile-info-container,
+    .user-recipes-container {
+        width: 48%;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-info-container {
+        margin-bottom: 10px;
     }
 }

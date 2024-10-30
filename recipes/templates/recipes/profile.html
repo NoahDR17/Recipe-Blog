@@ -3,35 +3,33 @@
 {% block title %}Profile{% endblock %}
 
 {% block content %}
-<div class="container p-2">
-    <h1>{{ user.username|capfirst }}'s Profile</h1>
-    <p>Email: {{ user.email }}</p>
-    <p>Joined on: {{ user.date_joined }}</p>
-</div>
+<div class="container profile-recipes-container p-3">
+    <!-- Profile Info Section -->
+    <div class="profile-info-container form-container">
+        <h1 class="text-white">{{ user.username|capfirst }}'s Profile</h1>
+        <p>Email: <span class="text-light">{{ user.email }}</span></p>
+        <p>Joined on: <span class="text-light">{{ user.date_joined }}</span></p>
+    </div>
+    
+    <!-- Recipes Section -->
+    <div class="user-recipes-container form-container">
+        <h2 class="text-white">Your Recipes: {{ user_recipes.count }}</h2>
 
-<div class="container p-2">
-    <h2>Your Recipes: {{ user_recipes.count }}</h2>
-
-    <!-- Button to toggle the dropdown -->
-    <button id="dropdownButton" class="btn btn-secondary" onclick="toggleDropdown()">
-        View Your Recipes
-    </button>
-    <!-- Dropdown menu -->
-    <div id="dropdownMenu" class="dropdown-menu" style="display: none;">
+        <!-- Display User's Recipes -->
         {% if user_recipes %}
-        <ul>
+        <ul class="list-unstyled mt-3">
             {% for recipe in user_recipes %}
-            <li>
-                <a href="{% url 'recipe_detail' recipe.id %}">{{ recipe.title }}</a>
+            <li class="mb-2 border border-white rounded p-2">
+                <a href="{% url 'recipe_detail' recipe.id %}" class="dropdown-item text-white">{{ recipe.title }}</a>
             </li>
             {% endfor %}
         </ul>
-        <hr>
+        <hr class="text-light">
         {% else %}
-        <p>No recipes found.</p>
+        <p class="text-white">No recipes found.</p>
         {% endif %}
+        
+        <a href="{% url 'add_recipe' %}" class="btn btn-primary custom-btn">Add New Recipe</a>
     </div>
-    <a href="{% url 'add_recipe' %}" class="btn btn-primary">Add New Recipe</a>
 </div>
-
 {% endblock %}

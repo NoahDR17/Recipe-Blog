@@ -8,7 +8,7 @@
     {% element h1 class="text-white" %} 
     {% trans "Sign Out" %}
     {% endelement %}
-    <div class="form-container mx-auto" style="width: 50%;">
+    <div class="form-container mx-auto comfirm-sign-out-container">
         {% url 'account_logout' as action_url %}
         {% element form method="post" action=action_url no_visible_fields=True %}
         {% slot body %}
