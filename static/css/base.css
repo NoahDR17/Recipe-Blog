@@ -24,6 +24,10 @@
     --box-shadow: 1px -1px 7px 0 #000;
 }
 
+.recipe-span {
+    color: var(--white);
+}
+
 html,
 body {
     height: 100%;
@@ -73,8 +77,32 @@ p {
     color: var(--white);
 }
 
+.nav-hover-effect .nav-link {
+    transition: color 0.3s ease;
+}
+
+.nav-hover-effect .nav-link:hover {
+    color: var(--accent-color);
+}
+
+.nav-hover-effect .nav-link.active {
+    color: var(--accent-color); 
+    border-bottom: 3px solid var(--accent-color); 
+    border-radius: 3px;
+}
+
 .navbar-nav .nav-link.active {
     color: var(--white);
+}
+
+.navbar-brand span {
+    padding-left: 3px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-brand span:hover {
+    color: var(--accent-color);
+    transform: scale(1.1); /* Slightly increase the size */
 }
 
 .navbar-toggler {
@@ -121,7 +149,7 @@ p {
 
 .about-us-section h2 {
     padding-bottom: 50px;
-    color: #ffffff;
+    color: var(--accent-color); 
     margin-bottom: 20px;
 }
 
@@ -138,7 +166,7 @@ p {
 }
 
 .custom-btn {
-    border: var(--white) 2px solid;
+    border: var(--deep-navy) 2px solid;
 }
 
 .about-us-image-container {
@@ -173,8 +201,14 @@ p {
     transition: transform 0.3s ease;
 }
 
+.social-icons .item {
+    transition: color 0.5s ease, transform 0.5s ease;
+}
+
 .social-icons .item:hover {
     transform: scale(1.2);
+    color: var(--white); 
+    transition: color 0.5s ease;
 }
 
 /* Form Sign-In */
