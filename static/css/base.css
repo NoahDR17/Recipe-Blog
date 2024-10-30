@@ -9,13 +9,13 @@
 
 /* General Colours */ 
 
-    --primary-color: #3A6351; /* A dark green for primary elements */
-    --secondary-color: #A2C6B5; /* A lighter green for accents */
-    --background-color: #F8F8F8; /* Light gray background for the site */
-    --text-color: #333; /* Dark gray for main text */
-    --heading-color: #222; /* Slightly darker gray for headings */
-    --accent-color: #FF6F61; /* A warm accent color, like coral, for buttons and highlights */
-    --border-color: #E0E0E0; /* Light gray for borders */
+    --primary-color: #3A6351; 
+    --secondary-color: #A2C6B5;
+    --background-color: #edf7ff; 
+    --text-color: #333; 
+    --heading-color: #222; 
+    --accent-color: #FF6F61; 
+    --border-color: #E0E0E0; 
     
 /* General */
     --border: 1px solid #000;
@@ -60,6 +60,60 @@ p {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+}
+
+/* carousel */
+.carousel-item img {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+/* About us Section */
+.about-us-section {
+    background-color: #013870; 
+    color: #ffffff; 
+}
+.about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-us-section h2 {
+    padding-bottom: 50px;
+    color: #ffffff; 
+    margin-bottom: 20px; 
+}
+
+.about-us-section p {
+    color: #ffffff; 
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+/* button options */
+.or-text {
+    font-size: 2rem;
+    font-family: 'Playfair Display', serif;
+}
+.custom-btn {
+    border: var(--heading-color) 2px solid;
+}
+
+.about-us-image-container {
+    padding: 15px 0; 
+    height: 100%; 
+}
+
+.about-us-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5%;
+    border: #ffffff 10px solid;
+    filter: brightness(0.9);
 }
 
 /* Footer */
