@@ -20,6 +20,7 @@
     --box-shadow: 1px -1px 7px 0 #000;
 }
 
+
 html, body {
     height: 100%;
 }
@@ -119,6 +120,9 @@ p {
     border-radius: 15px;
 }
 
+.recipe-span {
+    color: var(--white);
+}
 /* About Us Section */
 .about-us-section {
     background-color: var(--deep-navy);
@@ -190,7 +194,7 @@ p {
     color: var(--white);
 }
 
-/* Form Sign-In */
+/* Form */
 .form {
     width: 100%;
     padding: 15px;
@@ -198,6 +202,42 @@ p {
     border-radius: 5px;
 }
 
+.form-container {
+    background-color: var(--deep-navy) !important; 
+    padding: 20px;
+    border-radius: 8px;
+}
+.form-check .form-check-input {
+    float: none;
+}
+
+.form-container label,
+.form-container input,
+.form-container button,
+.form-container p {
+    color: #ffffff !important; /* White text */
+}
+
+.form-container input::placeholder {
+    color: #e0e0e0 !important; /* Light gray for placeholder text */
+}
+
+.form-container input {
+    color: var(--deep-navy) !important; 
+}
+
+.form-container input::placeholder {
+    color: var(--deep-navy) !important; 
+}
+
+form li {
+    color: var(--white);
+    text-align: left;
+}
+/* Sign out */
+sign-out h1{
+    color: var(--white);
+}
 /* Recipe List */
 .recipe_list {
     list-style-type: none;
