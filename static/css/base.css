@@ -3,33 +3,37 @@
 
 /* Root */
 :root {
-/* General Fonts */
+    /* General Fonts */
 
---main-font: 'Roboto', sans-serif;
+    --main-font: 'Roboto', sans-serif;
 
-/* General Colours */ 
+    /* General Colours */
 
-    --primary-color: #3A6351; 
+    --primary-color: #3A6351;
     --secondary-color: #A2C6B5;
-    --background-color: #edf7ff; 
-    --text-color: #333; 
-    --heading-color: #222; 
-    --accent-color: #FF6F61; 
-    --border-color: #E0E0E0; 
-    
-/* General */
+    --background-color: #edf7ff;
+    --deep-navy: #013870;
+    --text-color: #333;
+    --heading-color: #222;
+    --accent-color: #FF6F61;
+    --border-color: #E0E0E0;
+    --white: #ffffff;
+
+    /* General */
     --border: 1px solid #000;
     --box-shadow: 1px -1px 7px 0 #000;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
+
 /* Global Styles */
 body {
     display: flex;
     flex-direction: column;
-    font-family: var(--main-font), sans-serif; 
+    font-family: var(--main-font), sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
@@ -40,12 +44,20 @@ body {
 main {
     flex: 1;
 }
+
 /* Headings */
-h1, h2, h3, h4, h5, h6, li {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li {
     color: var(--heading-color);
-    font-family: 'Playfair Display', serif; 
+    font-family: 'Playfair Display', serif;
     margin: 0 0 1rem 0;
 }
+
 /* Paragraphs and Links */
 p {
     color: var(--text-color);
@@ -53,9 +65,26 @@ p {
 
 /* Header */
 .navbar {
-    background-color: var(--background-color);
+    background-color: var(--deep-navy);
     box-shadow: var(--box-shadow);
 }
+
+.navbar a {
+    color: var(--white);
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--white);
+}
+
+.navbar-toggler {
+    border-color: white;
+}
+
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 30 30%27><path stroke=%27white%27 stroke-width=%272%27 d=%27M4 7h22M4 15h22M4 23h22%27/></svg>');
+}
+
 .logo {
     width: 50px;
     height: 50px;
@@ -67,14 +96,22 @@ p {
     width: 100%;
     height: 80vh;
     object-fit: cover;
-    filter: brightness(0.6);
+    filter: brightness(0.8);
+}
+
+.carousel-text {
+    color: var(--deep-navy);
+    background-color: var(--accent-color);
+    padding: 5px;
+    border-radius: 15px;
 }
 
 /* About us Section */
 .about-us-section {
-    background-color: #013870; 
-    color: #ffffff; 
+    background-color: #013870;
+    color: #ffffff;
 }
+
 .about-text {
     display: flex;
     flex-direction: column;
@@ -84,27 +121,29 @@ p {
 
 .about-us-section h2 {
     padding-bottom: 50px;
-    color: #ffffff; 
-    margin-bottom: 20px; 
+    color: #ffffff;
+    margin-bottom: 20px;
 }
 
 .about-us-section p {
-    color: #ffffff; 
+    color: #ffffff;
     font-size: 1.1rem;
     line-height: 1.6;
 }
+
 /* button options */
 .or-text {
     font-size: 2rem;
     font-family: 'Playfair Display', serif;
 }
+
 .custom-btn {
-    border: var(--heading-color) 2px solid;
+    border: var(--white) 2px solid;
 }
 
 .about-us-image-container {
-    padding: 15px 0; 
-    height: 100%; 
+    padding: 15px 0;
+    height: 100%;
 }
 
 .about-us-image {
@@ -112,44 +151,33 @@ p {
     height: 100%;
     object-fit: cover;
     border-radius: 5%;
-    border: #ffffff 10px solid;
+    border: #ffffff 5px solid;
     filter: brightness(0.9);
 }
 
 /* Footer */
-footer {
-    display: flex;
-    flex-shrink: 0;
-    background-color: var(--background-color);
-    justify-content: center;
-    align-items: center;
-    border-top: var(--border);
-    margin-top: auto;
-}
-
-.item {
-    padding: 15px 0;
-    flex: 0 1 100px; 
-    max-width: 150px;
+.social-media-footer {
+    background-color: var(--accent-color);
+    padding: 10px;
     text-align: center;
 }
 
-.item a {
-    display: inline-block;
+.social-media-footer h3 {
+    color: var(--deep-navy);
+    margin-bottom: 5px;
 }
 
-footer .item  {
-    font-size: 2.5rem;   
+.social-icons .item {
+    font-size: 2.5rem;
+    color: var(--deep-navy);
     transition: transform 0.3s ease;
-    color: var(--accent-color);
 }
 
-.item i:hover {
-    transform: scale(1.1); 
+.social-icons .item:hover {
+    transform: scale(1.2);
 }
 
-
-/* Form Sign-In */ 
+/* Form Sign-In */
 .form {
     width: 100%;
     padding: 15px;
@@ -172,6 +200,7 @@ footer .item  {
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
