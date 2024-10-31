@@ -4,24 +4,46 @@
 
 {% block content %}
 <div class="container pt-3">
-    <h1 class="pb-3">All Recipes</h1>
+    <!-- Heading and Filter Row -->
+    <div class="d-flex justify-content-between align-items-center pb-3">
+        <h1>Recipes</h1>
+        <!-- Meal Type Filter -->
+        <form method="get" class="d-flex align-items-center">
+            <label for="meal_type" class="me-2 fs-4"  style="font-family: 'Roboto', serif;">Filter:</label>
+            <select id="meal_type" name="meal_type" class="form-select" onchange="this.form.submit()">
+                <option value="">All Meal Types</option>
+                {% for value, display in meal_type_choices %}
+                    <option value="{{ value }}" {% if value == meal_type %}selected{% endif %}>{{ display }}</option>
+                {% endfor %}
+            </select>
+        </form>
+    </div>
+
     <div class="row">
-        {% for recipe in recipes %}
-        <div class="col-md-6 col-lg-4 p-2">
-            <div class="form-container p-3">
-                <h2 class="text-white">{{ recipe.title }}</h2>
-                <p class="text-white"><strong>Created by:</strong> {{ recipe.author.username }}</p>
-                <p class="text-white"><strong>Meal Type:</strong> {{ recipe.meal_type }}</p>
-                <p class="text-white"><strong>Description:</strong> {{ recipe.description }}</p>
-                <p class="text-white"><strong>Calories:</strong> {{ recipe.calories }}</p>
-                <a href="{% url 'recipe_detail' recipe.id %}" class="btn btn-primary custom-btn mt-2">View Details</a>
+        {% if recipes %}
+            {% for recipe in recipes %}
+            <div class="col-md-6 col-lg-4 p-2">
+                <div class="form-container p-3">
+                    <h2 class="text-white">{{ recipe.title|capfirst }}</h2> <hr>
+                    <p class="text-white"><strong>Created by:</strong> {{ recipe.author.username }}</p>
+                    <p class="text-white"><strong>Meal Type:</strong> {{ recipe.meal_type }}</p>
+                    <p class="text-white"><strong>Description:</strong> {{ recipe.description }}</p>
+                    <p class="text-white"><strong>Calories:</strong> {{ recipe.calories }}</p>
+                    <a href="{% url 'recipe_detail' recipe.id %}" class="btn btn-primary custom-btn mt-2">View Details</a>
+                </div>
             </div>
-        </div>
-        {% empty %}
+            {% endfor %}
+        {% else %}
         <div class="text-center">
-            <p class="text-white">No recipes available.</p>
+            <p class="text-dark">
+                {% if meal_type %}
+                    No recipes available for the selected meal type.
+                {% else %}
+                    No recipes available.
+                {% endif %}
+            </p>
         </div>
-        {% endfor %}
+        {% endif %}
     </div>
 </div>
 {% endblock %}

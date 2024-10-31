@@ -24,7 +24,23 @@ class RecipeListView(ListView):
     """ View to list all recipes """
     model = Recipe
     template_name = 'recipes/recipe_list.html' 
-    context_object_name = 'recipes' 
+    context_object_name = 'recipes'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        meal_type = self.request.GET.get('meal_type')
+
+        if meal_type:
+            queryset = queryset.filter(meal_type=meal_type)
+
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        meal_type = self.request.GET.get('meal_type')
+        context['meal_type'] = meal_type
+        context['meal_type_choices'] = Recipe.MEAL_TYPE_CHOICES
+        return context
 
 class RecipeDetailView(DetailView):
     """ View to view recipe details"""

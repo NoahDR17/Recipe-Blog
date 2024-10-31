@@ -11,6 +11,7 @@ class Recipe(models.Model):
         ('breakfast', 'Breakfast'),
         ('lunch', 'Lunch'),
         ('dinner', 'Dinner'),
+        ('dessert', 'Dessert'),
     ]
 
     title = models.CharField(max_length=250, blank=False, null=False,  unique=False)
