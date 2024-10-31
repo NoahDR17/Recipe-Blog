@@ -133,7 +133,7 @@ p {
 
 /* About Us Section */
 .about-us-section {
-    background-color: var(--deep-navy);
+    background-color: #297d20;
     color: var(--white);
 }
 
@@ -145,7 +145,7 @@ p {
 }
 
 .about-us-section h2 {
-    color: var(--accent-color);
+    color: var(--white);
     margin-bottom: 20px;
 }
 
@@ -162,7 +162,13 @@ p {
 }
 
 .custom-btn {
-    border: var(--deep-navy) 2px solid;
+    border: 2px solid #ffffff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.custom-btn:hover {
+    background-color: #FF6F61;
+    border: 2px solid #ffffff;
+    transform: scale(1.05);
 }
 
 .about-us-image-container {
@@ -181,7 +187,7 @@ p {
 
 /* Footer */
 .social-media-footer {
-    background-color: var(--accent-color);
+    background-color: var(--deep-navy);
     padding: 10px;
     text-align: center;
 }
@@ -193,13 +199,13 @@ p {
 
 .social-icons .item {
     font-size: 2.5rem;
-    color: var(--deep-navy);
+    color: var(--white);
     transition: color 0.5s ease, transform 0.5s ease;
 }
 
 .social-icons .item:hover {
     transform: scale(1.2);
-    color: var(--white);
+    color: var(--accent-color);
 }
 
 /* Form */
@@ -248,18 +254,6 @@ form li {
     list-style-type: none;
 }
 
-/* Add a recipe */
-.custom-btn {
-    border: 2px solid #ffffff;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.custom-btn:hover {
-    background-color: #FF6F61;
-    transform: scale(1.05);
-}
-
-/* Recipe List */
 .form-container {
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -267,6 +261,9 @@ form li {
 
 .form-container:hover {
     transform: scale(1.02);
+}
+.no-recipes-text {
+    color: var(--deep-navy);
 }
 
 /* Dropdown Menu Styling */
@@ -279,6 +276,7 @@ form li {
 .dropdown-item:hover {
     background-color: var(--accent-color);
 }
+
 /* Spin Animation */
 .spin {
     animation: spin 10s linear infinite;

@@ -4,8 +4,8 @@
 
 {% block content %}
 <div class="container pt-3 pb-3">
-    <div class="form-container mx-auto" background-color: #013870; padding: 10px; border-radius: 8px;">
-        <h1 class="text-white">Title: {{ recipe.title }}</h1>
+    <div class="form-container mx-auto">
+        <h1 class="text-white">Title: {{ recipe.title|capfirst }}</h1>
         <p class="text-white"><strong>Created by:</strong> {{ recipe.author.username }}</p><hr>
         <p class="text-white"><strong>Meal Type:</strong> {{ recipe.meal_type }}</p><hr>
         <p class="text-white"><strong>Description:</strong> {{ recipe.description }}</p><hr>
@@ -20,7 +20,7 @@
             {% csrf_token %}
             <div class="form-group d-flex align-items-center">
                 <label for="rating" class="text-white me-2"><strong>Rate this Recipe:</strong></label>
-                <select name="rating" id="rating" class="form-select me-2">
+                <select name="rating" id="rating" class="form-select me-2" style="width: 10%;">
                     <option value="1">1 Star</option>
                     <option value="2">2 Stars</option>
                     <option value="3">3 Stars</option>
