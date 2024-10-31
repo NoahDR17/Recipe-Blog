@@ -6,11 +6,11 @@
 <div class="container pt-3 pb-3">
     <div class="form-container mx-auto">
         <h1 class="text-white">Title: {{ recipe.title|capfirst }}</h1>
-        <p class="text-white"><strong>Created by:</strong> {{ recipe.author.username }}</p><hr>
-        <p class="text-white"><strong>Meal Type:</strong> {{ recipe.meal_type }}</p><hr>
-        <p class="text-white"><strong>Description:</strong> {{ recipe.description }}</p><hr>
+        <p class="text-white"><strong>Created by:</strong> {{ recipe.author.username|capfirst }}</p><hr>
+        <p class="text-white"><strong>Meal Type:</strong> {{ recipe.meal_type|capfirst }}</p><hr>
+        <p class="text-white"><strong>Description:</strong> {{ recipe.description|capfirst }}</p><hr>
         <p class="text-white"><strong>Ingredients:</strong> {{ recipe.ingredients }}</p><hr>
-        <p class="text-white"><strong>Instructions:</strong> {{ recipe.instructions }}</p><hr>
+        <p class="text-white"><strong>Instructions:</strong> {{ recipe.instructions|capfirst }}</p><hr>
         <p class="text-white"><strong>Calories:</strong> {{ recipe.calories }}</p><hr>
 
         <h5 class="text-white">Average Rating: {{ recipe.average_rating|floatformat:0 }}/5</h5><hr>

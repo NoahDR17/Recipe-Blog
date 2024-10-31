@@ -25,9 +25,9 @@
             <div class="col-md-6 col-lg-4 p-2">
                 <div class="form-container p-3">
                     <h2 class="text-white">{{ recipe.title|capfirst }}</h2> <hr>
-                    <p class="text-white"><strong>Created by:</strong> {{ recipe.author.username }}</p>
-                    <p class="text-white"><strong>Meal Type:</strong> {{ recipe.meal_type }}</p>
-                    <p class="text-white"><strong>Description:</strong> {{ recipe.description }}</p>
+                    <p class="text-white"><strong>Created by:</strong> {{ recipe.author.username|capfirst }}</p>
+                    <p class="text-white"><strong>Meal Type:</strong> {{ recipe.meal_type|capfirst }}</p>
+                    <p class="text-white"><strong>Description:</strong> {{ recipe.description|capfirst }}</p>
                     <p class="text-white"><strong>Calories:</strong> {{ recipe.calories }}</p>
                     <a href="{% url 'recipe_detail' recipe.id %}" class="btn btn-primary custom-btn mt-2">View Details</a>
                 </div>
