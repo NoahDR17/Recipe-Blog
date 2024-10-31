@@ -47,7 +47,3 @@ class Review(models.Model):
 
     class Meta:
         unique_together = ('user', 'recipe')  # Prevent multiple reviews from the same user
-
-class Rating(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)

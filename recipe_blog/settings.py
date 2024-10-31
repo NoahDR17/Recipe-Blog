@@ -25,18 +25,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-noahdr17-recipeblog-0q42eit5qf9.ws-eu116.gitpod.io',
     'localhost',
-    'the-recipe-box.herokuapp.com',]
-
+    '8000-noahdr17-recipeblog-0q42eit5qf9.ws-eu116.gitpod.io',
+]
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-noahdr17-recipeblog-0q42eit5qf9.ws-eu116.gitpod.io',
-    "https://*.codeinstitute-ide.net/",
-    'the-recipe-box.herokuapp.com',
-    "https://*.herokuapp.com",]
+    'https://*.codeinstitute-ide.net',
+]
+
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
@@ -52,6 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
+    'cloudinary',
     'django.contrib.staticfiles',
 
     # Allauth
@@ -68,7 +69,7 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
 
     #Deployment
-    '.herokuapp.com',
+    #'.herokuapp.com',
 ]
 
 MIDDLEWARE = [
@@ -174,12 +175,17 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
+}
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
