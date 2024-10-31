@@ -30,9 +30,11 @@ DEBUG = False
 ALLOWED_HOSTS = [
     'localhost',
     '8000-noahdr17-recipeblog-0q42eit5qf9.ws-eu116.gitpod.io',
+    'the-recipe-blog-2ab045f310be.herokuapp.com',
 ]
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-noahdr17-recipeblog-0q42eit5qf9.ws-eu116.gitpod.io',
+    'https://the-recipe-blog-2ab045f310be.herokuapp.com',
     'https://*.codeinstitute-ide.net',
 ]
 
