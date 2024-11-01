@@ -15,6 +15,9 @@
   - [The Structure Plane](#the-structure-plane)
     - [Features](#features)
     - [Features Left To Implement](#features-left-to-implement)
+    - [Potential Future Features to Implement](#potential-future-features-to-implement)
+
+
   - [The Skeleton Plane](#the-skeleton-plane)
     - [Wireframes](#wireframes)
     - [Database Design](#database-design)
@@ -61,7 +64,6 @@ List and briefly describe each epic.
 #### User Stories
 Detail the user stories covered by each epic.
 
-### The Scope Plane
 ### The Scope Plane
 
 The **Recipe Blog** project is designed with a set of core features focused on providing users with an accessible and engaging platform for recipe sharing, discovery, and community engagement. The scope of the project centers around key functionalities that make it easy for users to manage their culinary content, interact with others, and explore a variety of recipes.
@@ -183,7 +185,6 @@ These features were chosen to balance functionality with usability, ensuring tha
 
 
 #### Features Left To Implement
-- **Go back button on add a recipe, recipe detail page, edit recipe page, delete recipe page, log out page, error pages.
 - **Confirmation notification on succesfull recipe creation, edit, delete, review, sign up/in/out etc...
 
 ### Potential Future Features to Implement
