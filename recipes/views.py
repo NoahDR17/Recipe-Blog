@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from .models import Recipe, Review 
 from .forms import RecipeForm
-
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.views import View
@@ -18,6 +18,7 @@ class AddRecipe(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         form.instance.author = self.request.user
+        messages.success(self.request, 'Recipe created successfully!')
         return super(AddRecipe, self).form_valid(form)
 
 class RecipeListView(ListView):
@@ -61,6 +62,10 @@ class RecipeUpdateView(LoginRequiredMixin, UpdateView):
     fields = ['title', 'description', 'ingredients', 'instructions', 'calories']
     context_object_name = 'recipe'
 
+    def form_valid(self, form):
+        messages.success(self.request, 'Recipe updated successfully!')
+        return super().form_valid(form)
+
     def get_success_url(self):
         return reverse_lazy('recipe_detail', kwargs={'pk': self.object.pk})
 
@@ -70,6 +75,7 @@ class RecipeDeleteView(LoginRequiredMixin, DeleteView):
     context_object_name = 'recipe'
 
     def get_success_url(self):
+        messages.success(self.request, 'Recipe deleted successfully!')
         return reverse_lazy('recipe_list')
 
     def delete(self, request, *args, **kwargs):
@@ -89,5 +95,5 @@ class RateRecipeView(LoginRequiredMixin, View):
             recipe=recipe,
             defaults={'rating': rating_value}
         )
-
+        messages.success(request, 'Your rating has been submitted successfully!')
         return redirect('recipe_detail', pk=recipe_id)
