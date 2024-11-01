@@ -183,9 +183,25 @@ These features were chosen to balance functionality with usability, ensuring tha
     - **Edit and Delete Options**: For each recipe listed, users have buttons to edit or delete the recipe directly from the profile page, allowing for efficient content management without navigating to other pages.
     - **Feedback**: After editing or deleting a recipe, users receive a confirmation message, ensuring they know their action was successful.
 
+- **Return Button**  
+  - **Description**: A button that allows users to return to their previous page, located on pages such as recipe details or edit recipe, where users may want to navigate back to their previous view.
+  - **Purpose**: The return button improves navigation by allowing users to easily return to where they came from without needing to use browser controls, enhancing user convenience and flow.
+  - **User Story**: As a user, I want a “Return" button so that I can quickly return to the previous page.
+  - **Implementation**:
+    - **JavaScript Navigation**: The button uses JavaScript’s `history.back()` function, which takes the user back to their last visited page in the session history.
+    - **Placement and Styling**: The button is styled to be easily visible but unobtrusive, located near the bottom of the page for intuitive access.
+
+- **Action Success Alert Messages**  
+  - **Description**: Display a success alert message whenever a user completes an action successfully, such as creating, editing, or deleting a recipe, leaving a review, signing up/out/in.
+  - **Purpose**: This feature provides immediate feedback to users, confirming that their action was completed successfully. Success messages improve usability by assuring users that their interaction was processed.
+  - **User Story**: As a user, I want to receive a confirmation message when I complete an action, so that I know my changes or actions have been successfull.
+  - **Implementation**:
+    - **Customization**: Success messages are styled to match the site's theme, appearing at the top right of the page.
+    - **Close Option**: The user can manually dismiss them, ensuring that the page remains clean and uncluttered.
+
+
 
 #### Features Left To Implement
-- **Confirmation notification on succesfull recipe creation, edit, delete, review, sign up/in/out etc...
 
 ### Potential Future Features to Implement
 
