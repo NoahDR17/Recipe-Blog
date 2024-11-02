@@ -315,14 +315,111 @@ List all technologies and frameworks used, including frontend, backend, and data
 
 ### Version Control
 
+The **Recipe Blog** project was developed using **Gitpod** as the IDE, with Git for version control, and the code was stored in a remote GitHub repository.
+
+Throughout development, the following Git commands were used to manage and push code updates:
+
+- **`git add <file>`**  
+  Adds the specified file(s) to the staging area, preparing them for a commit.
+
+- **`git commit -m "commit message"`**  
+  Commits the changes in the staging area to the local repository with a descriptive message.
+
+- **`git push`**  
+  Pushes all committed changes from the local repository to the remote repository on GitHub.
+
 ### Heroku Deployment
-Provide instructions for deploying the site to Heroku, including setup for PostgreSQL and Whitenoise for static files.
+
+The **Recipe Blog** site was deployed to Heroku, a cloud platform that allows easy deployment and scaling of web applications. Follow these steps to deploy the project on Heroku:
+
+1. **Set Up Heroku**
+   - Go to [Heroku](https://www.heroku.com/) and create an account (or log in if you already have one).
+   - In your Heroku dashboard, click the **New** button in the top right corner and select **Create New App**.
+   - Choose an **App Name** (it must be unique across Heroku) and select the appropriate **Region** based on your location.
+   - Click **Create App**.
+
+2. **Configure Environment Variables**
+   - Go to the **Settings** tab and click **Reveal Config Vars** to add necessary environment variables.
+   - Add the following config vars:
+     - `SECRET_KEY`: Your Django project's secret key.
+     - `DATABASE_URL`: This should already be set by the Heroku Postgres add-on.
+   - Save each config var after entering.
+
+3. **Deploy with GitHub Integration**
+   - Go to the **Deploy** tab and scroll down to **Deployment method**.
+   - Under **Connect to GitHub**, click **Connect** and authorize Heroku to access your GitHub account if prompted.
+   - In the search box, find the repository you want to deploy, then click **Connect** to link it to Heroku.
+
+4. **Deploy the Application**
+   - In the **Manual deploy** section, select the **main** branch and click **Deploy Branch**.
+   - Heroku will begin building and deploying your app. Once completed, a message should confirm that the app was successfully deployed.
+   - Click **View** to open your live site.
+
+5. **Automatic Deploys (Optional)**
+   - To enable continuous deployment, scroll to **Automatic deploys** and enable it for the main branch. This will automatically deploy new updates whenever you push to the main branch on GitHub.
+
+Your application should now be live on Heroku! This setup provides a scalable and reliable environment for your Django project.
 
 ### Run Locally
-Include a step-by-step guide for setting up the project locally, covering dependencies, environment variables, and local server setup.
+
+To run the **Recipe Blog** project on your local machine, follow these steps:
+
+1. **Clone the Repository**
+   - Go to the GitHub repository you wish to clone.
+   - Click on the **Code** dropdown button and select **HTTPS**.
+   - Copy the repository link provided.
+
+2. **Clone the Project Locally**
+   - Open your IDE or terminal of choice (ensure **Git** is installed on your machine).
+   - In the terminal, type the following command, replacing `copied-git-url` with the URL you copied:
+     ```bash
+     git clone copied-git-url
+     ```
+   - Press **Enter** to clone the project. The repository will now be downloaded to your local machine.
+
+3. **Set Up Environment Variables**
+   - Within the project directory, create a `.env` file to store your environment variables.
+   - Add the necessary keys, such as `SECRET_KEY`, `DATABASE_URL`, and any others required for the project.
+
+4. **Install Dependencies**
+   - Navigate into the project directory and install the required dependencies by running:
+     ```bash
+     pip install -r requirements.txt
+     ```
+
+5. **Apply Migrations**
+   - Run the following command to set up the database:
+     ```bash
+     python manage.py migrate
+     ```
+
+6. **Run the Server**
+   - Start the Django development server:
+     ```bash
+     python manage.py runserver
+     ```
+   - Open your browser and go to `http://127.0.0.1:8000` to view the application locally.
+
+The project is now ready to be used on your local machine for development and testing.
 
 ### Fork Project
-Instructions for users interested in forking the project for their own use.
+
+Forking a project allows you to create your own copy of someone else’s repository, making it easy to propose changes, experiment, or use it as a foundation for a new project.
+
+To fork the **Recipe Blog** repository:
+
+1. **Navigate to the Repository**
+   - Go to the GitHub repository page that you want to fork.
+
+2. **Create the Fork**
+   - In the top right corner of the page, click the **Fork** button.
+   - GitHub will create a copy of the full project in your own GitHub account.
+
+3. **Modify and Experiment**
+   - You now have a duplicate of the original project under your account. You can make changes to your forked copy without affecting the original repository.
+   - If you wish to propose changes to the original project, you can submit a **pull request** from your forked repository.
+
+This process also allows you to test changes before pushing it to the main/master branch.
 
 ## Credits
 Acknowledge any resources, libraries, or individuals who contributed to the project.
