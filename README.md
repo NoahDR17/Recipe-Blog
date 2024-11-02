@@ -251,28 +251,31 @@ Describe the overall design approach, aiming for a clean, accessible user experi
 
 The **Recipe Blog** site uses a cohesive, natural color scheme that reflects a calm, inviting atmosphere, enhancing readability and user engagement. The colors were chosen to complement the culinary theme and create a visually appealing user experience. Additionally, Bootstrap’s primary and secondary color classes were integrated in some of the buttons and anchor tags.
 
-- **Deep Green (#3A6351)**  
-  This rich green serves as the about us sections background colour. It conveys freshness and naturalness, aligning well with the culinary theme.
+- **Deep Green (#3A6351)** <span style="background-color:#3A6351; padding: 3px 10px; border-radius: 3px; color: white;">Example</span>  
+  This rich green serves as the background color for the "About Us" section, conveying freshness and naturalness that aligns well with the culinary theme.
 
-- **Light Blue (#edf7ff)**  
-  This very light blue serves as the primary background color, providing a clean canvas that helps content stand out.
+- **Mint Green (#A2C6B5)** <span style="background-color:#A2C6B5; padding: 3px 10px; border-radius: 3px;">Example</span>  
+  A soft, refreshing color used as a border and background accent, providing a subtle contrast to the deeper greens and blues on the site.
 
-- **Deep Navy (#013870)**  
-  Used in the navigation bar footer, forms, and as the background colour for recipe information boxes, this stable, strong color enhances contrast and draws attention, ensuring accessibility and easy site navigation.
+- **Light Blue (#edf7ff)** <span style="background-color:#edf7ff; padding: 3px 10px; border-radius: 3px; color: #333;">Example</span>  
+  This very light blue is the primary background color, creating a clean canvas that helps content stand out and offers a bright, welcoming atmosphere.
 
-- **Dark Gray (#333)**  
-  This color is used for the primary text, chosen for its high readability against lighter backgrounds to ensure content is easily readable.
+- **Deep Navy (#013870)** <span style="background-color:#013870; padding: 3px 10px; border-radius: 3px; color: white;">Example</span>  
+  Used in the navigation bar, footer, forms, and as the background color for recipe information boxes, this stable, strong color enhances contrast and draws attention, ensuring accessibility and ease of navigation.
 
-- **Darker Gray (#222)**  
-  A slightly darker shade than the text color, this is used specifically for headings to create subtle emphasis and guide the user’s attention to key sections.
+- **Dark Gray (#333)** <span style="background-color:#333; padding: 3px 10px; border-radius: 3px; color: white;">Example</span>  
+  This color is used for primary text, chosen for its high readability against lighter backgrounds, making content easily readable.
 
-- **Coral Accent (#FF6F61)**  
-  This warm coral accent color is used for hover effects, call-to-action buttons, and highlights. It adds vibrancy to the design and draws attention to important interactive elements.
+- **Darker Gray (#222)** <span style="background-color:#222; padding: 3px 10px; border-radius: 3px; color: white;">Example</span>  
+  A slightly darker shade than the primary text color, this is used specifically for headings to create subtle emphasis and guide the user’s attention to key sections.
 
-- **White (#ffffff)**  
+- **Coral Accent (#FF6F61)** <span style="background-color:#FF6F61; padding: 3px 10px; border-radius: 3px; color: white;">Example</span>  
+  This warm coral color is used for hover effects, call-to-action buttons, and highlights, adding vibrancy to the design and drawing attention to interactive elements.
+
+- **White (#ffffff)** <span style="background-color:#ffffff; padding: 3px 10px; border-radius: 3px; color: #333;">Example</span>  
   This color is used as a neutral background and for text in certain elements, enhancing contrast and ensuring that text and icons are always visible on darker backgrounds.
 
-These colors create a welcoming and balanced aesthetic, supporting the platform's overall goals of making the Recipe Blog visually appealing, accessible, and user-friendly, without drawing attention away from the main focus of the page, the recipes.
+These colors create a welcoming and balanced aesthetic, supporting the platform's overall goals of making the Recipe Blog visually appealing, accessible, and user-friendly, without drawing attention away from the main focus of the page: the recipes.
 
 #### Typography
 
