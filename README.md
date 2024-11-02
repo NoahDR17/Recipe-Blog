@@ -248,13 +248,63 @@ List security features.
 Describe the overall design approach, aiming for a clean, accessible user experience.
 
 #### Colour Scheme
-List and explain the colours chosen for the site.
+
+The **Recipe Blog** site uses a cohesive, natural color scheme that reflects a calm, inviting atmosphere, enhancing readability and user engagement. The colors were chosen to complement the culinary theme and create a visually appealing user experience. Additionally, Bootstrap’s primary and secondary color classes were integrated in some of the buttons and anchor tags.
+
+- **Deep Green (#3A6351)**  
+  This rich green serves as the about us sections background colour. It conveys freshness and naturalness, aligning well with the culinary theme.
+
+- **Light Blue (#edf7ff)**  
+  This very light blue serves as the primary background color, providing a clean canvas that helps content stand out.
+
+- **Deep Navy (#013870)**  
+  Used in the navigation bar footer, forms, and as the background colour for recipe information boxes, this stable, strong color enhances contrast and draws attention, ensuring accessibility and easy site navigation.
+
+- **Dark Gray (#333)**  
+  This color is used for the primary text, chosen for its high readability against lighter backgrounds to ensure content is easily readable.
+
+- **Darker Gray (#222)**  
+  A slightly darker shade than the text color, this is used specifically for headings to create subtle emphasis and guide the user’s attention to key sections.
+
+- **Coral Accent (#FF6F61)**  
+  This warm coral accent color is used for hover effects, call-to-action buttons, and highlights. It adds vibrancy to the design and draws attention to important interactive elements.
+
+- **White (#ffffff)**  
+  This color is used as a neutral background and for text in certain elements, enhancing contrast and ensuring that text and icons are always visible on darker backgrounds.
+
+These colors create a welcoming and balanced aesthetic, supporting the platform's overall goals of making the Recipe Blog visually appealing, accessible, and user-friendly, without drawing attention away from the main focus of the page, the recipes.
 
 #### Typography
-Specify the fonts used and the rationale behind the selection.
+
+The **Recipe Blog** uses a combination of two fonts, **Roboto** and **Playfair Display**, to create a harmonious balance between readability and visual elegance.
+
+- **Roboto**  
+  - **Usage**: Primarily used for body text, navigation links, and UI elements.
+  - **Rationale**: Roboto is a clean, modern sans-serif font good for its readability across different screen sizes. Its simplicity complements the design and ensures that content remains legible, providing a smooth reading experience for users.
+
+- **Playfair Display**  
+  - **Usage**: Applied to headings, titles, and highlighted elements.
+  - **Rationale**: Playfair Display is a serif font with a classic, elegant feel, adding a touch of sophistication to the site. It helps create visual contrast against Roboto, drawing users’ attention to key sections and enhancing the site’s aesthetic appeal.
+
+This font combination balances functionality with style, supporting the Recipe Blog’s goal of providing an inviting and user-friendly experience while maintaining a visually pleasing, professional appearance.
 
 #### Imagery
-Discuss the use of imagery, especially food-related images, to enhance the visual appeal of the site.
+
+The **Recipe Blog** site uses carefully chosen imagery to enhance its visual appeal and create an inviting atmosphere. While images are used sparingly, each one has a specific purpose and contributes to the overall user experience.
+
+- **Logo**  
+  - **Description**: The logo is a simple, image of a plate with a fork and knife crossed over each other, symbolizing dining and food. The logo is animated to rotate, adding a subtle, dynamic effect to the branding.
+  - **Purpose**: This rotating logo adds a unique touch to the site, establishing a memorable brand image that aligns with the site's focus on food and recipes.
+
+- **Carousel Images**  
+  - **Description**: The homepage features a sliding carousel with three images: gyros, meal prep containers, and a bowl of soup. Each image represents different types of meals, showcasing the diversity of recipes available on the site.
+  - **Purpose**: The carousel provides a visually engaging introduction to the site, giving users an immediate sense of the culinary variety they can expect to find. The use of high-quality, appetizing images is designed to draw users in and inspire them to explore recipes.
+
+- **About Us Image**  
+  - **Description**: The "About Us" section includes an image displayed alongside the text, reinforcing the site's community-focused mission and adding a personal, welcoming feel to this page.
+  - **Purpose**: This image complements the introductory text in the "About Us" section. It is 
+
+Each image on the site has been carefully selected to support the Recipe Blog’s brand and user experience. By using food-related imagery in key sections, the site creates a visually cohesive experience that resonates with its target audience and enhances the appeal of the platform.
 
 ## Technologies
 List all technologies and frameworks used, including frontend, backend, and database.

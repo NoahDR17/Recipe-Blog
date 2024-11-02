@@ -4,22 +4,19 @@
 :root {
     --main-font: 'Roboto', sans-serif;
 
-    /* General Colors */
-    --primary-color: #3A6351;
-    --secondary-color: #A2C6B5;
-    --background-color: #edf7ff;
-    --deep-navy: #013870;
-    --text-color: #333;
-    --heading-color: #222;
-    --accent-color: #FF6F61;
-    --border-color: #E0E0E0;
-    --white: #ffffff;
+    /* Color Scheme */
+    --deep-green: #3A6351;            
+    --light-blue: #edf7ff;           
+    --deep-navy: #013870; 
+    --dark-gray: #333; 
+    --darker-gray: #222; 
+    --coral: #FF6F61; 
+    --white: #ffffff; 
 
     /* General */
-    --border: 1px solid #000;
-    --box-shadow: 1px -1px 7px 0 #000;
+    --border: 1px solid var(--dark-gray);
+    --box-shadow: 1px -1px 7px 0 var(--dark-gray);
 }
-
 
 html,
 body {
@@ -31,8 +28,8 @@ body {
     display: flex;
     flex-direction: column;
     font-family: var(--main-font), sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: var(--light-blue);
+    color: var(--dark-gray);
     line-height: 1.6;
     box-sizing: border-box;
 }
@@ -50,14 +47,14 @@ h4,
 h5,
 h6,
 li {
-    color: var(--heading-color);
+    color: var(--darker-gray);
     font-family: 'Playfair Display', serif;
     margin: 0 0 1rem 0;
 }
 
 /* Paragraphs */
 p {
-    color: var(--text-color);
+    color: var(--dark-gray);
 }
 
 /* Header */
@@ -75,12 +72,12 @@ p {
 }
 
 .nav-hover-effect .nav-link:hover {
-    color: var(--accent-color);
+    color: var(--coral);
 }
 
 .nav-hover-effect .nav-link.active {
-    color: var(--accent-color);
-    border-bottom: 3px solid var(--accent-color);
+    color: var(--coral);
+    border-bottom: 3px solid var(--coral);
     border-radius: 3px;
 }
 
@@ -94,7 +91,7 @@ p {
 }
 
 .navbar-brand span:hover {
-    color: var(--accent-color);
+    color: var(--coral);
     transform: scale(1.1);
 }
 
@@ -122,7 +119,7 @@ p {
 
 .carousel-text {
     color: var(--deep-navy);
-    background-color: var(--accent-color);
+    background-color: var(--coral);
     padding: 5px;
     border-radius: 15px;
 }
@@ -133,7 +130,7 @@ p {
 
 /* About Us Section */
 .about-us-section {
-    background-color: #297d20;
+    background-color: var(--deep-green);
     color: var(--white);
 }
 
@@ -162,12 +159,12 @@ p {
 }
 
 .custom-btn {
-    border: 2px solid #ffffff;
+    border: 2px solid var(--white);
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 .custom-btn:hover {
-    background-color: #FF6F61;
-    border: 2px solid #ffffff;
+    background-color: var(--coral);
+    border: 2px solid var(--white);
     transform: scale(1.05);
 }
 
@@ -205,7 +202,7 @@ p {
 
 .social-icons .item:hover {
     transform: scale(1.2);
-    color: var(--accent-color);
+    color: var(--coral);
 }
 
 /* Form */
@@ -274,7 +271,7 @@ form li {
 }
 
 .dropdown-item:hover {
-    background-color: var(--accent-color);
+    background-color: var(--coral);
 }
 
 /* Spin Animation */
@@ -286,7 +283,6 @@ form li {
     from {
         transform: rotate(0deg);
     }
-
     to {
         transform: rotate(360deg);
     }
@@ -301,19 +297,18 @@ form li {
     display: block;
 }
 
+/* Responsive Design */
 @media (min-width: 1200px) {
     .about-us-section {
         flex-direction: row;
         justify-content: space-between;
     }
-
     .about-text {
         flex: 0 0 50%;
         max-width: 50%;
         padding-right: 20px;
         align-items: flex-start;
     }
-
     .about-us-image-container {
         display: block;
         flex: 0 0 50%;
@@ -321,7 +316,6 @@ form li {
         padding: 15px;
         max-width: 50%;
     }
-
     .about-us-section p {
         text-align: left;
     }
@@ -331,12 +325,10 @@ form li {
     .nav-hover-effect .nav-link.active {
         border-bottom: none;
     }
-
     .about-us-section h2 {
         padding-top: 15px;
         padding-bottom: 0;
     }
-
     .about-us-section {
         padding-bottom: 20px;
     }
@@ -347,7 +339,6 @@ form li {
         display: flex;
         justify-content: space-between;
     }
-
     .profile-info-container,
     .user-recipes-container {
         width: 48%;
