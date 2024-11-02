@@ -4,6 +4,7 @@
     <div class="container-fluid">
         <!-- Logo and Site Name -->
         <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
+            <!-- Site logo with spin animation and brand name link to home page -->
             <img src="{% static 'images/logo.webp' %}" alt="Recipe Blog knife and fork logo" class='logo spin'>
             <span class="ms-2 fs-4">The Recipe Box</span>
         </a>
@@ -23,6 +24,7 @@
                     <a class="nav-link {% if request.resolver_match.url_name == 'recipe_list' %}active{% endif %}" href="{% url 'recipe_list' %}">View All Recipes</a>
                 </li>
                 {% if user.is_authenticated == False %}
+                <!-- Sign Up and Sign In links shown if user is not authenticated -->
                 <li class="nav-item">
                     <a class="nav-link {% if request.resolver_match.url_name == 'signup' %}active{% endif %}" href="/accounts/signup/">Sign Up</a>
                 </li>
@@ -30,11 +32,13 @@
                     <a class="nav-link {% if request.resolver_match.url_name == 'login' %}active{% endif %}" href="/accounts/login/">Sign In</a>
                 </li>
                 {% else %}
+                <!-- Log Out link shown if user is authenticated -->
                 <li class="nav-item">
                     <a class="nav-link {% if request.resolver_match.url_name == 'logout' %}active{% endif %}" href="/accounts/logout/">Log Out</a>
                 </li>
                 {% endif %}
                 {% if user.is_authenticated %}
+                <!-- Profile link shown if user is logged in -->
                 <li class="nav-item">
                     <a class="nav-link {% if request.resolver_match.url_name == 'profile' %}active{% endif %}" href="{% url 'profile' %}">Profile</a>
                 </li>

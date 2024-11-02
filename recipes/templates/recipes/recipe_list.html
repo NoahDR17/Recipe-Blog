@@ -14,13 +14,15 @@
                 <option value="">All Meal Types</option>
                 {% for value, display in meal_type_choices %}
                     <option value="{{ value }}" {% if value == meal_type %}selected{% endif %}>{{ display }}</option>
-                {% endfor %}
+                    <!-- Populates the filter dropdown with meal type choices and selects the current filter if applied -->
+                    {% endfor %}
             </select>
         </form>
     </div>
 
     <div class="row">
         {% if recipes %}
+            <!-- Loop through each recipe and display its details -->
             {% for recipe in recipes %}
             <div class="col-md-6 col-lg-4 p-2">
                 <div class="form-container p-3">
@@ -34,6 +36,7 @@
             </div>
             {% endfor %}
         {% else %}
+        <!-- Message shown if no recipes are available based on the current filter -->
         <div class="text-center">
             <p class="text-dark">
                 {% if meal_type %}

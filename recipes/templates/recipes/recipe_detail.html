@@ -16,6 +16,7 @@
         <h5 class="text-white">Average Rating: {{ recipe.average_rating|floatformat:0 }}/5</h5><hr>
 
         {% if recipe.author != user %}
+        <!-- Rating form shown if the current user is not the recipe author -->
         <form action="{% url 'rate_recipe' recipe.id %}" method="POST" class="mt-3">
             {% csrf_token %}
             <div class="form-group d-flex align-items-center">
@@ -33,6 +34,7 @@
         {% endif %}
 
         {% if recipe.author == user %}
+        <!-- Edit and Delete buttons shown if the current user is the recipe author -->
         <div class="mt-3">
             <!-- Edit Recipe Button -->
             <a href="{% url 'edit_recipe' recipe.id %}" class="btn btn-warning custom-btn">Edit Recipe</a>
