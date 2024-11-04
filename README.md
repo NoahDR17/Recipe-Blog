@@ -1411,9 +1411,36 @@ To accommodate Django's templating language and secured views, the following app
 
 All pages were run through the official [Pep8](http://pep8online.com/) validator to ensure all code was pep8 compliant. Some errors were shown due to blank spacing and lines too long, 1 line instead of 2 expected. All of these errors were resolved and code passed through validators with the exception of the settings.py file.
 
-The django auto generated code for AUTH_PASSWORD_VALIDATORS were showing up as lines too long. I could not find a way to split these lines but since they were auto generated and not my own custom code, I hope this is acceptable.
+The django auto generated code for AUTH_PASSWORD_VALIDATORS were showing up as lines too long. I could not find a way to split these lines without breaking the code, since the code is imported from django, i have left it as it is.
+![Settings Valid Error Warning](docs/readme_images/setting_error.webp) 
+![Settings File Code](docs/readme_images/settings_file_error_block.webp)
 
 ![Python Valid](docs/readme_images/python_valid.webp)
+
+All Javascript was ran through the official [JSHINT](https://jshint.com), no errors were reported, and the only warnings that it showed that needed fixing were missing semicolons.
+![Javascript Valid](/docs/readme_images/javascript_valid.webp)
+
+## Responsiveness
+
+Each page was tested to ensure responsiveness across a range of screen sizes, starting from 320px in width and scaling upward, in alignment with the WCAG 2.1 Reflow criteria for responsive design. Testing was conducted on Chrome, Edge, Firefox, and Opera browsers.
+
+### Testing Steps:
+
+1. Open a browser and navigate to [The Recipe Box](https://the-recipe-blog-2ab045f310be.herokuapp.com/).
+2. Open the developer tools (right-click and select "Inspect").
+3. Switch to the responsive view and set the width to 320px.
+4. Adjust the window width from 320px up to the maximum screen width.
+
+### Expected Outcome:
+
+- The website should be fully responsive across all screen sizes.
+- No horizontal scrolling should appear, and elements should not overlap.
+- Images should remain sharp, without any pixelation or stretching.
+
+### Actual Outcome:
+
+- The website met all expectations, maintaining responsiveness across all tested screen sizes and browsers.
+
 ## Deployment
 
 ### Version Control
