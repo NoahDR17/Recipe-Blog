@@ -234,7 +234,49 @@ To enhance the user experience and expand the functionality of the **Recipe Blog
 ### Skeleton 
 
 #### Wireframes
-Include links or images of the wireframes for key pages, such as Home, Recipe Detail, and Profile pages.
+-**Home Page**:
+![Home Wireframe Page](/docs/wireframe_images/home_wireframe.webp)
+
+-**Navbar**:
+![Navbar Wireframe](/docs/wireframe_images/navbar_wireframe.webp)
+
+-**Footer**:
+![Footer Wireframe](/docs/wireframe_images/footer_wireframe.webp)
+
+-**View all Recipes Page**:
+![View All Recipes Wireframe Page](/docs/wireframe_images/view_all_wireframe.webp)
+
+-**Recipe Detail Page**:
+![Recipe Detail Wireframe Page](/docs/wireframe_images/recipe_detail_wireframe.webp)
+
+-**Sign Up Page**:
+![Sign Up Wireframe Page](/docs/wireframe_images/sign_up.webp)
+
+-**Sign In Page**:
+![Sign In Wireframe Page](/docs/wireframe_images/log_in_wireframe.webp)
+
+-**Sign Out Page**:
+![Sign Out Wireframe Page](/docs/wireframe_images/sign_out.webp)
+
+-**Add a Recipe Page**:
+![Add Recipe Wireframe Page](/docs/wireframe_images/add_recipe_wireframe.webp)
+
+-**Edit Recipe Page**:
+![Edit Recipe Wireframe Page](/docs/wireframe_images/edit_recipe_wireframe.webp)
+
+-**Delete Recipe Page**:
+![Delete Recipe Wireframe Page](/docs/wireframe_images/delete_recipe_wireframe.webp)
+
+-**Profile Page**:
+![Profile Wireframe Page](/docs/wireframe_images/profile_wireframe.webp)
+
+-**Error Pages**:
+  - 404:
+![Error404 Wireframe Page](/docs/wireframe_images/404error_wireframe.webp)
+  - 403: 
+![Error403 Wireframe Page](/docs/wireframe_images/403error_wireframe.webp)
+  - 500:
+![Error500 Wireframe Page](/docs/wireframe_images/500error_wireframe.webp)
 
 #### Database Design
 Describe the database schema.
