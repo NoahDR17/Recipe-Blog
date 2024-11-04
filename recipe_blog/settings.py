@@ -39,12 +39,10 @@ CSRF_TRUSTED_ORIGINS = [
     'https://8000-noahdr17-recipeblog-zniiy6dxe8e.ws.codeinstitute-ide.net',
 ]
 
-
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 SITE_ID = 1
-
 
 # Application definition
 
@@ -62,16 +60,13 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
 
-    # Apps 
+    # Apps
     'home',
     'recipes',
 
-    # Other 
+    # Other
     'crispy_forms',
     'crispy_bootstrap5',
-
-    #Deployment
-    #'.herokuapp.com',
 ]
 
 MIDDLEWARE = [
@@ -90,8 +85,10 @@ MIDDLEWARE = [
 ]
 
 AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',  # Default backend
-    'allauth.account.auth_backends.AuthenticationBackend',  #  Allauth backend
+    # Default backend
+    'django.contrib.auth.backends.ModelBackend',
+    #  Allauth backend
+    'allauth.account.auth_backends.AuthenticationBackend',
 )
 
 ROOT_URLCONF = 'recipe_blog.urls'
@@ -102,7 +99,6 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
             os.path.join(BASE_DIR, 'templates', 'allauth')
-
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -125,13 +121,6 @@ WSGI_APPLICATION = 'recipe_blog.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#     }
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#}
 
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
@@ -175,21 +164,13 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-
-#CLOUDINARY_STORAGE = {
-#    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
-#    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
-#    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
-#}
-
 
 # Static Files Configuration for Whitenoise
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 

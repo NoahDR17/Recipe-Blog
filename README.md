@@ -1386,20 +1386,34 @@ The following external modules and packages were utilized to support core functi
 
 ## Accessibility Testing
 
-[Wave Accessibility](https://wave.webaim.org/) tool was used throughout development and for final testing of the deployed website to check for any aid accessibility testing.
+Throughout development and during final testing, the [Wave Accessibility](https://wave.webaim.org/) tool was used to verify and enhance accessibility for the deployed website, ensuring it meets industry standards.
 
-Testing was focused to ensure the following criteria were met:
+Key accessibility criteria tested included:
 
-- All forms have associated labels or aria-labels so that this is read out on a screen reader to users who tab to form inputs
-- Color contrasts meet a minimum ratio as specified in [WCAG 2.1 Contrast Guidelines](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html)
-- Heading levels are not missed or skipped to ensure the importance of content is relayed correctly to the end user
-- All content is contained within landmarks to ensure ease of use for assistive technology, allowing the user to navigate by page regions
-- All not textual content had alternative text or titles so descriptions are read out to screen readers
-- HTML page lang attribute has been set
-- Aria properties have been implemented correctly
-- WCAG 2.1 Coding best practices being followed
+- **Form Accessibility**: All forms include associated labels or `aria-labels`, ensuring screen readers provide meaningful descriptions to users navigating with keyboard tabs.
+- **Color Contrast**: All color contrasts meet the minimum ratio specified in the [WCAG 2.1 Contrast Guidelines](https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html) to support readability for visually impaired users.
+- **Heading Structure**: Heading levels are used sequentially, without skips, to provide a logical structure and accurately reflect content hierarchy to users.
+- **Semantic Markup**: Content is contained within semantic markup.
+- **Alternative Text**: Non-text content includes alternative text or titles, providing descriptions to screen readers for improved context and understanding.
+- **Language Attribute**: The HTML `lang` attribute is set to accurately reflect the primary language of the content, aiding screen readers in pronunciation and interpretation.
+- **ARIA Properties**: ARIA attributes are implemented correctly to enhance interaction with dynamic content and provide additional information where necessary.
+- **WCAG 2.1 Coding Best Practices**: All coding practices follow the WCAG 2.1 guidelines, ensuring a consistent and accessible experience across the site.
 
+## Validator Testing
 
+All pages were tested with the [W3 HTML Validator](https://validator.w3.org/) to ensure valid HTML markup. Initially, minor errors such as stray script tags were identified and corrected, resulting in all pages passing validation.
+
+To accommodate Django's templating language and secured views, the following approach was used for validation:
+- For pages containing Django templates or restricted views, open the page in a browser and right-click to **View Page Source**.
+- Copy the rendered HTML code and paste it into the W3 HTML Validator. This approach allows for accurate validation of the final HTML output as displayed to users.
+  
+  ![HTML Validated](docs/readme_images/html_valid.webp)
+
+All pages were run through the official [Pep8](http://pep8online.com/) validator to ensure all code was pep8 compliant. Some errors were shown due to blank spacing and lines too long, 1 line instead of 2 expected. All of these errors were resolved and code passed through validators with the exception of the settings.py file.
+
+The django auto generated code for AUTH_PASSWORD_VALIDATORS were showing up as lines too long. I could not find a way to split these lines but since they were auto generated and not my own custom code, I hope this is acceptable.
+
+![Python Valid](docs/readme_images/python_valid.webp)
 ## Deployment
 
 ### Version Control

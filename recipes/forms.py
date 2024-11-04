@@ -1,6 +1,7 @@
 from django import forms
 from .models import Recipe, Review
 
+
 class RecipeForm(forms.ModelForm):
     """ The Form to Create a Recipe """
     class Meta:
@@ -13,7 +14,6 @@ class RecipeForm(forms.ModelForm):
             "meal_type",
             "calories",
         ]
-    
     labels = {
             "title": "Recipe Title",
             "description": "Description",
@@ -22,6 +22,7 @@ class RecipeForm(forms.ModelForm):
             "meal_type": "Meal Type",
             "calories": "Calories",
         }
+
 
 class ReviewForm(forms.ModelForm):
     class Meta:
