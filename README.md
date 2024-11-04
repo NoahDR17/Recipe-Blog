@@ -6,23 +6,23 @@
 
 ## Table of Contents
 - [User Experience Design](#user-experience-design)
-  - [The Strategy Plane](#the-strategy-plane)
+  - [The Strategy](#the-strategy)
     - [Site Goals](#site-goals)
     - [Agile Planning](#agile-planning)
     - [Epics](#epics)
     - [User Stories](#user-stories)
-  - [The Scope Plane](#the-scope-plane)
-  - [The Structure Plane](#the-structure-plane)
+  - [Scope](#the-scope)
+  - [Structure](#structure)
     - [Features](#features)
     - [Features Left To Implement](#features-left-to-implement)
     - [Potential Future Features to Implement](#potential-future-features-to-implement)
 
 
-  - [The Skeleton Plane](#the-skeleton-plane)
+  - [Skeleton](#the-skeleton)
     - [Wireframes](#wireframes)
     - [Database Design](#database-design)
     - [Security](#security)
-  - [The Surface Plane](#the-surface-plane)
+  - [Surface](#surface)
     - [Design](#design)
     - [Colour Scheme](#colour-scheme)
     - [Typography](#typography)
@@ -40,7 +40,7 @@
 
 ## User Experience Design
 
-### The Strategy Plane
+### The Strategy
 
 #### Site Goals
 The **Recipe Blog** aims to provide a vibrant and engaging platform for users to share their culinary creations, explore new recipes, and connect with other food enthusiasts. The primary goals of the site include:
@@ -64,7 +64,7 @@ List and briefly describe each epic.
 #### User Stories
 Detail the user stories covered by each epic.
 
-### The Scope Plane
+### Scope 
 
 The **Recipe Blog** project is designed with a set of core features focused on providing users with an accessible and engaging platform for recipe sharing, discovery, and community engagement. The scope of the project centers around key functionalities that make it easy for users to manage their culinary content, interact with others, and explore a variety of recipes.
 
@@ -92,7 +92,7 @@ The **Recipe Blog** project is designed with a set of core features focused on p
 
 These features were chosen to balance functionality with usability, ensuring that users can easily share and explore recipes while enjoying the benefits of a supportive, interactive community.
 
-### The Structure Plane
+### Structure
 
 #### Features
 - **Navbar**  
@@ -231,7 +231,7 @@ To enhance the user experience and expand the functionality of the **Recipe Blog
   - **Description**: Allow users to message each other directly within the platform to share tips, collaborate on recipes, or give private feedback.
   - **Purpose**: This feature would enhance social interaction, building a stronger sense of community and encouraging users to connect over shared interests.
 
-### The Skeleton Plane
+### Skeleton 
 
 #### Wireframes
 Include links or images of the wireframes for key pages, such as Home, Recipe Detail, and Profile pages.
@@ -242,7 +242,7 @@ Describe the database schema.
 #### Security
 List security features.
 
-### The Surface Plane
+### Surface
 
 #### Design
 ### Design Approach
@@ -501,7 +501,9 @@ List all technologies and frameworks used, including frontend, backend, and data
 2. Check the layout and functionality on each device.
 
 **Expected Result**: The layout adjusts properly, and all elements are accessible on all screen sizes.
-**Actual Result**: All steps carried out successfully, except for the about us image, which i decided to remove as it did not look good in smaller screen sizes, navbar modified to transform links into dropdown icon, on smaller screen sizes, instead displaying them in a column inside the dropdown, View all recipes also changed to display Recipes in columns instead of rows, profile display also changed to column.
+**Actual Result**: All steps carried out successfully, except for the about us image, which i decided to remove as it did not look good in smaller screen sizes, navbar modified to transform links into dropdown icon, on smaller screen sizes, instead displaying them in a column inside the dropdown, View all recipes also changed to display Recipes in columns instead of rows, profile display also changed to column. 
+
+
 
 **Result Image**:
 ![Responsive Design Removed About Image](/docs/readme_images/about_us_no_image.webp)
