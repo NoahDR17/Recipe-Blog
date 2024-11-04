@@ -1,9 +1,8 @@
 # Recipe Blog Project
 ### Introduction 
-**Recipe Blog** is an interactive online platform that brings together food enthusiasts from around the world to share, discover, and celebrate culinary creations. The app allows users to create, edit, and manage their own recipes while exploring those shared by others. It also includes a rating and review system, enabling users to share feedback and discover top-rated recipes. With personalised profiles and an intuitive design, Recipe Blog offers a user-friendly experience for anyone looking to document their culinary adventures, try new dishes, and connect with a like-minded community. """Live Link"""
+**Recipe Blog** is an interactive online platform that brings together food enthusiasts from around the world to share, discover, and celebrate culinary creations. The app allows users to create, edit, and manage their own recipes while exploring those shared by others. It also includes a rating and review system, enabling users to share feedback and discover top-rated recipes. With personalised profiles and an intuitive design, Recipe Blog offers a user-friendly experience for anyone looking to document their culinary adventures, try new dishes, and connect with a like-minded community. [Live Site - The Recipe Box](https://the-recipe-blog-2ab045f310be.herokuapp.com/)
 
-"""Website Preview Display"""
-
+![Website Mockup](/docs/readme_images/web_mockup.webp)
 ## Table of Contents
 - [User Experience Design](#user-experience-design)
   - [The Strategy](#the-strategy)
