@@ -1101,7 +1101,60 @@ The **Recipe Blog** site uses carefully chosen imagery to enhance its visual app
 Each image on the site has been carefully selected to support the Recipe Blog’s brand and user experience. By using food-related imagery in key sections, the site creates a visually cohesive experience that resonates with its target audience and enhances the appeal of the platform.
 
 ## Technologies
-List all technologies and frameworks used, including frontend, backend, and database.
+### Technologies Used
+#### Languages
+
+- **HTML**: The structure of the website was built primarily using HTML.
+- **CSS**: The website was styled with custom CSS in an external stylesheet to create a cohesive and responsive design.
+- **JavaScript**: JavaScript was used to enable dynamic features such as the custom slider on the menu page and the Bootstrap date picker.
+- **Python**: Python served as the main programming language, utilizing the Django framework for backend functionality.
+
+#### Integrated Development Environment
+
+- **Gitpod Cloud Based IDE**: Development was conducted using the Gitpod IDE.
+
+#### Version Control and Hosting
+
+- **Git**: Used to track code changes, commit, and push code during development.
+- **GitHub**: The source code is hosted on GitHub, allowing for version control and collaborative development.
+
+#### Design and Media Tools
+
+- **Bootstrap**: Used for Footer icons throughout the site to enhance user experience.
+- **Favicon.io**: The favicon files were generated using [Favicon.io](https://favicon.io/favicon-converter/).
+- **lucid**: Wireframes were designed using [lucid](https://www.lucidchart.com/) to plan the website layout and functionality.
+- **Dalle**: The website logo was created using Dalle, adding a consistent brand element to the header.
+
+
+#### Python Modules
+
+- **Django Class-Based Views** (`ListView`, `UpdateView`, `DeleteView`, `CreateView`, `DetailView`): Used to manage CRUD (Create, Read, Update, Delete) functionality in a structured way.
+- **Mixins** (`LoginRequiredMixin`, `UserPassesTestMixin`): These mixins were implemented to enforce login requirements on views and ensure that users were authorized to perform specific actions.
+
+These tools and technologies were selected to optimize development efficiency, enhance user experience, and maintain secure and effective project management.
+
+### External Modules and Packages
+
+The following external modules and packages were utilized to support core functionality, styling, database management, and deployment of the application:
+
+- **asgiref==3.8.1**
+- **crispy-bootstrap5==2024.10**: Enables easy integration of Bootstrap 5 styling with Django forms, using Django Crispy Forms.
+- **dj-database-url==0.5.0**: Simplifies database configuration.
+- **Django==5.1.2**: The main web framework used to build this application.
+- **django-allauth==65.1.0**: A versatile package used for handling user authentication, registration, and social authentication.
+- **django-braces==1.16.0**: Supplies a collection of reusable, mixin-based utilities to enhance class-based views in Django.
+- **django-crispy-forms==2.3**: Extends form styling capabilities in Django, allowing for custom layouts and form designs.
+- **django-model-utils==5.0.0**: Provides additional functionality for Django models.
+- **django-resized==1.0.3**: Facilitates image resizing and optimization for uploaded images, improving load times and reducing storage usage.
+- **django-star-ratings==0.9.2**: Adds a star rating system to Django models, enabling user ratings for recipes or other content.
+- **gunicorn==20.1.0**: A Python WSGI HTTP Server for Unix, used to serve the Django application in production environments.
+- **pillow==11.0.0**: The Python Imaging Library (PIL) fork, used for image processing, such as resizing and format conversions.
+- **psycopg2==2.9.10**: A PostgreSQL adapter for Python, enabling Django to interact with PostgreSQL databases.
+- **psycopg2-binary==2.9.10**: A pre-compiled, binary distribution of `psycopg2` for easier installation and compatibility.
+- **setuptools==75.3.0**: Facilitates Python package distribution and dependency management.
+- **sqlparse==0.5.1**
+- **swapper==1.4.0**: Allows models to be swapped with custom implementations, increasing flexibility in Django applications.
+- **whitenoise==6.8.2**: Simplifies static file serving in production, compressing and caching files to optimize load times.
 
 # Testing
 
@@ -1443,4 +1496,17 @@ To fork the **Recipe Blog** repository:
 This process also allows you to test changes before pushing it to the main/master branch.
 
 ## Credits
-Acknowledge any resources, libraries, or individuals who contributed to the project.
+
+A list of resources and tools that contributed to the development of this project:
+
+- **DALL-E**: Used to generate the website logo.
+- **Pexels**: Source for high-quality images featured on the site.
+- **Django Documentation**:
+  - [Class-Based View Mixins](https://docs.djangoproject.com/en/5.1/ref/class-based-views/mixins/): Used to learn about and implement view mixins for enhanced functionality and security.
+  - [Django Documentation](https://docs.djangoproject.com/en/5.1/): Referred to for general Django features, including configuration of static files.
+- **Whitenoise Documentation**: [Whitenoise](https://whitenoise.readthedocs.io/en/latest/): Guided setup for static file handling and optimization in production.
+- **YouTube Tutorials**: 
+  - [Django & Python Tutorial Series](https://www.youtube.com/watch?v=cPfvhpdYaNY&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=2) and [Django Tutorial](https://www.youtube.com/watch?v=ZCPhzoK_bg4&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=3): Provided inspiration and foundational setup for the project structure.
+- **W3Schools Bootstrap 5 Guide**: [Bootstrap 5 Styling](https://www.w3schools.com/bootstrap5/index.php) — Used as a reference for implementing Bootstrap 5 styling and components across the site.
+
+These resources were instrumental in learning, troubleshooting, and refining the project throughout development.
