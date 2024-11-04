@@ -902,7 +902,104 @@ To enhance the user experience and expand the functionality of the **Recipe Blog
 ![Error500 Wireframe Page](/docs/wireframe_images/500error_wireframe.webp)
 
 #### Database Design
-Describe the database schema.
+### User Diagram 
+![Account ERD](/docs/readme_images/account_diagram.webp)
+![Auth User ERD](/docs/readme_images/auth_user.webp)
+
+### Recipe Model
+
+The **Recipe** model represents recipes contributed by users, capturing key details about each recipe. It includes the following fields:
+
+- **title**:  
+  - Type: `CharField`
+  - Max Length: 250 characters
+  - Description: Represents the name of the recipe. This field is required.
+
+- **author**:  
+  - Type: `ForeignKey` to the `User` model
+  - Relationship: Links each recipe to its creator. If a user is deleted, all recipes authored by that user are also deleted (`on_delete=models.CASCADE`).
+
+- **description**:  
+  - Type: `CharField`
+  - Max Length: 500 characters
+  - Description: Describes the recipe in general.
+
+- **ingredients**:  
+  - Type: `CharField`
+  - Max Length: 10,000 characters
+  - Description: Contains the list of ingredients for the recipe. This field is required.
+
+- **instructions**:  
+  - Type: `CharField`
+  - Max Length: 10,000 characters
+  - Description: Stores the cooking instructions for the recipe. This field is required.
+
+- **calories**:  
+  - Type: `IntegerField`
+  - Description: Represents the total number of calories in the recipe.
+
+- **created_on**:  
+  - Type: `DateTimeField`
+  - Default: Automatically set to the current date and time when the instance is created (`auto_now_add=True`).
+
+- **meal_type**:  
+  - Type: `CharField`
+  - Choices: `MEAL_TYPE_CHOICES` (Breakfast, Lunch, Dinner, Dessert)
+  - Default: Breakfast
+
+#### Model Methods
+- **average_rating(self)**:  
+  Calculates the average rating of the recipe based on related `Review` instances, using the `Avg` function to aggregate ratings. Returns 0 if no reviews exist.
+
+- **delete(self, *args, **kwargs)**:  
+  Overrides the delete method to delete all related reviews before deleting the recipe, ensuring data integrity.
+
+- **__str__(self)**:  
+  Returns the recipe title as a string representation.
+
+![Recipe ERD](/docs/readme_images/recipe_diagram.webp)
+
+### Review Model
+
+The **Review** model represents user reviews for a recipe. It includes the following fields:
+
+- **user**:  
+  - Type: `ForeignKey` to the `User` model
+  - Relationship: Indicates which user wrote the review. When the user is deleted, all associated reviews are also deleted (`on_delete=models.CASCADE`).
+
+- **recipe**:  
+  - Type: `ForeignKey` to the `Recipe` model
+  - Relationship: Indicates which recipe the review is for. When a recipe is deleted, all associated reviews are also deleted (`on_delete=models.CASCADE`).
+
+- **rating**:  
+  - Type: `IntegerField`
+  - Description: Represents the rating given by the user. Can be further constrained to limit ratings between 1 and 5.
+
+- **created_at**:  
+  - Type: `DateTimeField`
+  - Default: Automatically set to the current date and time when the review is created (`auto_now_add=True`).
+
+#### Meta Class
+- **unique_together = ('user', 'recipe')**:  
+  Enforces that each user can only leave one review per recipe, preventing multiple reviews from the same user on the same recipe.
+
+### Relationships and Features
+
+#### Relationships
+- The **Recipe** model has a foreign key to the `User` model (as `author`) to identify the creator of the recipe.
+- The **Review** model includes foreign keys to both `User` and `Recipe`, associating a review with both a user and a specific recipe.
+
+#### Aggregation and Average Rating
+- The **average_rating()** method in `Recipe` uses aggregation to calculate the average rating across all `Review` instances for a given recipe.
+
+|
+#### Data Deletion
+- The `Recipe` model’s **delete()** method ensures all reviews linked to the recipe are deleted before the recipe itself is removed, maintaining data integrity.
+
+#### Constraints
+- The **unique_together** constraint in `Review` ensures that each user can only leave one review per recipe, helping to prevent spam and multiple reviews by the same user.
+
+![Review ERD](/docs/readme_images/account_diagram.webp)
 
 #### Security
 List security features.

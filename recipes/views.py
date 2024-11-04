@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from .models import Recipe, Review 
 from .forms import RecipeForm
 from django.contrib import messages
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.decorators import login_required
 from django.views import View
 
@@ -59,7 +59,7 @@ def profile_view(request):
     return render(request, 'recipes/profile.html', {'user': request.user, 'user_recipes': user_recipes})
 
 
-class RecipeUpdateView(LoginRequiredMixin, UpdateView):
+class RecipeUpdateView(LoginRequiredMixin, UpdateView, UserPassesTestMixin):
     """ View to update an existing recipe """
     model = Recipe
     template_name = 'recipes/edit_recipe.html'
@@ -74,8 +74,14 @@ class RecipeUpdateView(LoginRequiredMixin, UpdateView):
     def get_success_url(self):
         """ Redirects to the recipe detail page after successful update """
         return reverse_lazy('recipe_detail', kwargs={'pk': self.object.pk})
+    
+    def test_func(self):
+        """ Ensures the user is the recipe owner or an admin """
+        recipe = self.get_object()
+        return self.request.user == recipe.author or self.request.user.is_staff
+        
 
-class RecipeDeleteView(LoginRequiredMixin, DeleteView):
+class RecipeDeleteView(LoginRequiredMixin, DeleteView, UserPassesTestMixin):
     """ View to delete a recipe and associated reviews """
     model = Recipe
     template_name = 'recipes/recipe_confirm_delete.html'
@@ -92,6 +98,11 @@ class RecipeDeleteView(LoginRequiredMixin, DeleteView):
         self.object.review_set.all().delete()
         self.object.delete()
         return redirect(self.get_success_url())
+        
+    def test_func(self):
+        """ Ensures the user is the recipe owner or an admin """
+        recipe = self.get_object()
+        return self.request.user == recipe.author or self.request.user.is_staff
         
 class RateRecipeView(LoginRequiredMixin, View):
     """ View to allow users to rate a recipe """
