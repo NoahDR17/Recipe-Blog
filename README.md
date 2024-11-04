@@ -108,15 +108,24 @@ These features were chosen to balance functionality with usability, ensuring tha
     - **Automatic Redirects**: For any actions requiring an account (like adding a recipe or leaving a review), users are automatically redirected to the login page.
     - **Dropdown Menu**: For smaller screen sizes a dropdown icon is displayed instead of the nav items, displaying a list of nav items, styled for a smaller screen size, this allows for a clean aesthetic across all screen types.
 
+![Navbar Feature](/docs/readme_images/navbar_signed_out.webp)
+![Navbar Feature](/docs/readme_images/navbar_signed_in.webp)
+![Navbar Feature](/docs/readme_images/navbar_dropdown_icon.webp)
+![Navbar Feature](/docs/readme_images/navbar_dropdown_items.webp)
+
 - **Footer**  
   - **Description**: The footer includes links to social media, appearing at the bottom of every page.
   - **Purpose**: The footer offers additional navigation options and information, enhancing user accessibility.
   - **User Story**: As a user, I want a footer with extra links so that I can quickly access more resources or reach out if needed.
+  
+![Footer Feature](/docs/readme_images/footer.webp)
 
 - **View All Recipes**  
   - **Description**: A page displaying all recipes available on the platform, with options to filter recipes by meal type.
   - **Purpose**: Allows users to explore a wide variety of recipes, encouraging discovery.
   - **User Story**: As a user, I want to see a list of all recipes so that I can browse and find interesting dishes to try.
+
+![View All Recipes Feature](/docs/readme_images/view_all_recipes.webp)
 
 - **Recipe Detail Page**  
   - **Description**: A dedicated page displaying all details of a selected recipe. This page serves as a comprehensive view where users can fully explore a recipe and decide if they want to try it, additionally, for the owner of the recipe, options to edit or delete said recipe will be present, and they will not have access to the option to leave a review on their own recipe.
@@ -129,10 +138,16 @@ These features were chosen to balance functionality with usability, ensuring tha
     - **User Interaction**: Logged-in users can leave a rating directly from this page, while users who are the author of the recipe will instead of being able to leave a rating, they will have options to edit or delete the recipe 
     - **Navigation Options**: Links to go back to the list of all recipes or navigate to other areas of the site are included for ease of use.
 
+![Recipe Detail Feature](/docs/readme_images/recipe_detail.webp)
+
 - **Create an Account**  
-  - **Description**: Users can register an account, providing them access to additional features like creating and reviewing recipes.
+  - **Description**: Users can register an account, providing them access to additional features like creating and reviewing recipes, provides success message upon account creation and sign in.
   - **Purpose**: Enables a personalized experience and grants access to interactive features, enhancing user engagement.
   - **User Story**: As a new user, I want to create an account so that I can add my own recipes and participate in the community.
+
+![Sign Up Feature](/docs/readme_images/sign_up.webp)
+![Sign Up Feature](/docs/readme_images/sign_in_success.webp)
+
 
 - **Log In Page**  
   - **Description**: A simple and secure page where users can enter their credentials to access their account. The log-in page provides fields for a username and password.
@@ -144,6 +159,10 @@ These features were chosen to balance functionality with usability, ensuring tha
     - **Password Recovery**: A link to reset a forgotten password is available to help users regain access to their account easily.
     - **Navigation**: Users not registered are encouraged to sign up through a link on this page, ensuring they know how to access the platform’s full features.
 
+![Log In Feature](/docs/readme_images/sign_in.webp)
+![Log In Feature](/docs/readme_images/sign_in_success.webp)
+
+
 - **Sign Out Page**  
   - **Description**: A page or button that allows logged-in users to log out of their account, ending their session on the site.
   - **Purpose**: Enables users to sign out of their accounts when they’re finished using the site, helping to maintain privacy and security.
@@ -151,6 +170,9 @@ These features were chosen to balance functionality with usability, ensuring tha
   - **Implementation**:
     - **Log Out**: A button or link is available on the navigation bar, allowing users to log out with a single click.
     - **Redirect**: After logging out, users are redirected to the homepage, confirming that their session has ended.
+
+![Log Out Feature](/docs/readme_images/sign_out.webp)
+![Log Out Feature](/docs/readme_images/sign_out_success.webp)
 
 - **Create a Recipe**  
   - **Description**: Allows logged in users to add new recipes by entering details such as the recipe title, ingredients, instructions, meal-type, calories, date of creation.
@@ -162,15 +184,24 @@ These features were chosen to balance functionality with usability, ensuring tha
     - **View and Template**: A view handles the recipe creation process, validating inputs and saving data to the database. The template offers a clear, user-friendly interface to guide users in submitting their recipe.
     - **Feedback**: Upon successfully adding a recipe, users receive a success message to confirm that their recipe was added. If any input errors occur, users are notified to correct the entry before being able create it.
 
+![Create Recipe Feature](/docs/readme_images/add_recipe.webp)
+![Create Recipe Feature](/docs/readme_images/create_recipe_success.webp)
+
 - **Edit Recipe**  
   - **Description**: Allows users to edit their own recipes, updating ingredients, instructions, or the image as needed.
   - **Purpose**: Allows users to keep their recipes up-to-date or refine them over time, enhancing the quality of the content on the platform.
   - **User Story**: As a user, I want to edit my recipes so that I can improve or update them based on feedback or new ideas.
 
+![Edit Recipe Feature](/docs/readme_images/edit_recipe_form.webp)
+![Edit Recipe Feature](/docs/readme_images/edit_recipe_success.webp)
+
 - **Delete Recipe**  
   - **Description**: Users can delete any of their recipes, permanently removing them from the platform.
   - **Purpose**: Allows users to manage their content and remove recipes that they no longer wish to share.
   - **User Story**: As a user, I want to delete my recipes so that I can remove any recipes i no longer wish to share and store on the site.
+
+![Delete Recipe Feature](/docs/readme_images/delete_recipe_page.webp)
+![Delete Recipe Feature](/docs/readme_images/delete_recipe_success.webp)
 
 - **Profile Page**  
   - **Description**: A page where logged in users can view their account information and see a list of all the recipes they have created. From here, they can also edit or delete their recipes, users who have not logged in will instead see navigation items to log in, or sign up in the profile links stead.
@@ -183,6 +214,10 @@ These features were chosen to balance functionality with usability, ensuring tha
     - **Edit and Delete Options**: For each recipe listed, users have buttons to edit or delete the recipe directly from the profile page, allowing for efficient content management without navigating to other pages.
     - **Feedback**: After editing or deleting a recipe, users receive a confirmation message, ensuring they know their action was successful.
 
+![Profile View Feature](/docs/readme_images/profile.webp)
+![Profile View Feature](/docs/readme_images/profile_display_column.webp)
+
+
 - **Return Button**  
   - **Description**: A button that allows users to return to their previous page, located on pages such as recipe details or edit recipe, where users may want to navigate back to their previous view.
   - **Purpose**: The return button improves navigation by allowing users to easily return to where they came from without needing to use browser controls, enhancing user convenience and flow.
@@ -190,6 +225,22 @@ These features were chosen to balance functionality with usability, ensuring tha
   - **Implementation**:
     - **JavaScript Navigation**: The button uses JavaScript’s `history.back()` function, which takes the user back to their last visited page in the session history.
     - **Placement and Styling**: The button is styled to be easily visible but unobtrusive, located near the bottom of the page for intuitive access.
+
+![Return Feature](/docs/readme_images/go_back_btn.webp)
+
+- **5-Star Rating System**  
+  - **Description**: Allows logged-in users who are not the owner of a recipe to rate it on a scale of 1 to 5 stars. The site then calculates and displays the average rating of each recipe based on all user ratings.
+  - **Purpose**: This feature enables community members to provide feedback and helps others identify popular, high-quality recipes. By displaying the average rating, it provides a quick visual indicator of a recipe’s overall quality.
+  - **User Story**: As a user, I want to rate recipes I’ve tried so that I can share my feedback and help others discover quality dishes.
+  - **Implementation**:
+    - **Rating Model**: A separate Django model was created to store individual ratings for each recipe, linked to the user and the recipe.
+    - **Rating Submission**: Only logged-in users who are not the recipe’s owner can submit a rating.
+    - **Average Calculation**: Each time a recipe is rated, the average rating is recalculated and stored in the recipe model. This average rating is then displayed on the recipe’s detail page for all users to see.
+    - **Feedback**: Upon successfully submitting a rating, users receive a success message confirming that their rating has been added. If users encounter any issues (e.g., trying to rate their own recipe), an error message informs them of the restriction, logic has been implemented to only show the option to rate the recipe to users who are not the author of the recipe however, which helps prevents such an issue occuring.
+
+  ![Rating Feature](/docs/readme_images/rate_recipe.webp)
+  ![Rating Success](/docs/readme_images/rate_recipe_success.webp)
+
 
 - **Action Success Alert Messages**  
   - **Description**: Display a success alert message whenever a user completes an action successfully, such as creating, editing, or deleting a recipe, leaving a review, signing up/out/in.
@@ -199,7 +250,26 @@ These features were chosen to balance functionality with usability, ensuring tha
     - **Customization**: Success messages are styled to match the site's theme, appearing at the top right of the page.
     - **Close Option**: The user can manually dismiss them, ensuring that the page remains clean and uncluttered.
 
+![Success Messages Feature](/docs/readme_images/sign_in_success.webp)
+![Success Messages Feature](/docs/readme_images/sign_out_success.webp)
+![Success Messages Feature](/docs/readme_images/edit_recipe_success.webp)
+![Success Messages Feature](/docs/readme_images/rate_recipe_success.webp)
+![Success Messages Feature](/docs/readme_images/create_recipe_success.webp)
+![Success Messages Feature](/docs/readme_images/delete_recipe_success.webp)
 
+- **Custom 404, 403, and 500 Error Pages**  
+  - **Description**: Custom error pages are provided for common HTTP errors: 404 (Page Not Found), 403 (Forbidden), and 500 (Internal Server Error). These pages include user-friendly messages, a clear layout, and links back to the main sections of the site.
+  - **Purpose**: Custom error pages enhance user experience by providing helpful feedback when issues occur, guiding users back to functional parts of the site instead of displaying default error messages that may be confusing or abrupt.
+  - **User Story**: As a user, I want informative error pages so that I understand what went wrong and know how to return to working sections of the site.
+  - **Implementation**:
+    - **Error Page Templates**: Three separate HTML templates were created for each error type. Each template features a message explaining the error, and a link back to the homepage..
+    - **Styling**: The error pages use consistent styling with the rest of the site, including the site's color scheme, typography, and branding elements. This ensures the error pages feel cohesive and user-friendly.
+    - **View Configuration**: Django’s settings were configured to recognize and display these custom error templates whenever the corresponding HTTP errors occur. The `DEBUG` setting is set to `False` in production to allow Django to use the custom error pages.
+    - **Testing**: Each error page was tested by intentionally causing specific errors (e.g., navigating to a nonexistent page for 404, testing permissions for 403, and simulating a server error for 500) to ensure they display correctly and offer a helpful experience.
+
+  ![404 Error Page](/docs/readme_images/404_error.webp)
+  ![403 Error Page](/docs/readme_images/403_error.webp)
+  ![500 Error Page](/docs/readme_images/500_error.webp)
 
 #### Features Left To Implement
 
