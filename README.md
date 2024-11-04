@@ -16,8 +16,6 @@
     - [Features](#features)
     - [Features Left To Implement](#features-left-to-implement)
     - [Potential Future Features to Implement](#potential-future-features-to-implement)
-
-
   - [Skeleton](#the-skeleton)
     - [Wireframes](#wireframes)
     - [Database Design](#database-design)
@@ -1002,7 +1000,20 @@ The **Review** model represents user reviews for a recipe. It includes the follo
 ![Review ERD](/docs/readme_images/account_diagram.webp)
 
 #### Security
-List security features.
+#### View Security with `UserPassesTestMixin` and `LoginRequiredMixin`
+To secure views and restrict access, the `UserPassesTestMixin` was used with class-based views in Django. A custom `test_func` method was created to ensure that only authorized users could access certain actions:
+- **User-specific functionality** for editing and deleting recipes was restricted to the user who created the recipe, and they are also restricted from leaving a review on their own recipes.
+
+Also used was the `LoginRequiredMixin`, to restrict unauthorised users from perfoming authorised actions, like creating a recipe.
+
+This approach ensures that only appropriate users can perform sensitive actions, enhancing the security of user-specific features listed in the project.
+
+#### Environment Variables Management
+Environment variables were managed securely to prevent sensitive information from being exposed in the codebase:
+- **Local Development**: Environment variables (such as secret keys, and database credentials) were stored in an `env.py` file. This file was kept out of version control to ensure that sensitive data was not added to the repository.
+- **Production**: For the production environment, these variables were securely added to the Heroku Config Vars. This setup allows the application to access necessary configurations without exposing sensitive information.
+
+By following these practices, the project ensures that sensitive information is securely managed both in development and production environments.
 
 ### Surface
 
