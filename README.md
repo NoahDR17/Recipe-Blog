@@ -1441,6 +1441,21 @@ Each page was tested to ensure responsiveness across a range of screen sizes, st
 
 - The website met all expectations, maintaining responsiveness across all tested screen sizes and browsers.
 
+## Issue with Removing "Forgot Password" Link
+
+While using Allauth's base sign-in page, a "Forgot your password?" link was displayed by default. This link redirects users to a password reset template. However, when attempting to remove the link, I encountered an issue locating the exact code responsible for rendering it. The `login.html` file did not contain any direct reference to this anchor element.
+
+![Template Log In Code](docs/readme_images/login_template.webp)
+
+After further investigation, I discovered that the link is generated within Allauth’s `allauth/accounts/forms.py` file.
+
+![Code Extract](docs/readme_images/login_template.webp)
+
+### Solution
+To resolve this, I simply copied the entire Allauth folder into my project’s root directory, modified the relevant code in `forms.py`, and removed the block responsible for rendering the "Forgot Password" link. This effectively removed the link from the login form. 
+
+Due to having already spent a large handful of hours investigating the problem, i have decided to leave it as it is and focus on other tasks, if i have time at the end i will return and conduct a further investigation.
+
 ## Deployment
 
 ### Version Control
@@ -1488,7 +1503,7 @@ The **Recipe Blog** site was deployed to Heroku, a cloud platform that allows ea
 5. **Automatic Deploys (Optional)**
    - To enable continuous deployment, scroll to **Automatic deploys** and enable it for the main branch. This will automatically deploy new updates whenever you push to the main branch on GitHub.
 
-Your application should now be live on Heroku! This setup provides a scalable and reliable environment for your Django project.
+The application should now be live on Heroku! This setup provides a scalable and reliable environment for your Django project.
 
 ### Run Locally
 
