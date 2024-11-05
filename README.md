@@ -1133,7 +1133,7 @@ A list of resources and tools that contributed to the development of this projec
 These resources were used in learning and troubleshooting.
 
 - **DALL-E**: Used to generate the website logo.
-- **Pexels**: Source for high-quality images featured on the site.
+- **Pexels**: Source for high-quality images featured on the site, includes about us image, and carousel images.
 - **Django Documentation**:
   - [Class-Based View Mixins](https://docs.djangoproject.com/en/5.1/ref/class-based-views/mixins/): Used to learn about and implement view mixins for enhanced functionality and security.
   - [Django Documentation](https://docs.djangoproject.com/en/5.1/): Referred to for general Django features, including configuration and explanation of static files.
