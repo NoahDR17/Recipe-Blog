@@ -1139,6 +1139,12 @@ These resources were used in learning and troubleshooting.
   - [Django Documentation](https://docs.djangoproject.com/en/5.1/): Referred to for general Django features, including configuration and explanation of static files.
 - **Whitenoise Documentation**: [Whitenoise](https://whitenoise.readthedocs.io/en/latest/): used to learn about static file handling and optimization in production.
 - **YouTube Tutorials**: 
-  - [Django & Python Tutorial Series](https://www.youtube.com/watch?v=cPfvhpdYaNY&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=2) and [Django Tutorial](https://www.youtube.com/watch?v=ZCPhzoK_bg4&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=3):
-  briefly viewed these two videos to gain inspiration for project base setup, and learn about installing and setting up allauth, all custom code is still my own.
+  - [Django & Python Tutorial Series](https://www.youtube.com/watch?v=cPfvhpdYaNY&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=2) and [Django Tutorial](https://www.youtube.com/watch?v=ZCPhzoK_bg4&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=3)
+  [Allauth download and setup](https://www.youtube.com/watch?v=-E2igrFADI0&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=6)
+Code that I wrote: 
+![My Code](docs/readme_images/my_code_followed.webp)
+Code In Video: 
+![Code Credit](docs/readme_images/code_credit.webp)
+briefly viewed these videos to gain inspiration for project base setup, and learn about installing and setting up allauth, all custom code is still my own.
+
 - **W3Schools Bootstrap 5 Guide**: [Bootstrap 5 Styling](https://www.w3schools.com/bootstrap5/index.php) — Used as a reference for implementing Bootstrap 5 styling and components across the site.
