@@ -33,8 +33,6 @@
   - [Fork Project](#fork-project)
 - [Credits](#credits)
 
----
-
 ## User Experience Design
 
 ### The Strategy
@@ -228,7 +226,6 @@ These features were chosen to balance functionality with usability, ensuring tha
 ![Sign Up Feature](/docs/readme_images/sign_up.webp)
 ![Sign Up Feature](/docs/readme_images/sign_in_success.webp)
 
-
 - **Log In Page**  
   - **Description**: A simple and secure page where users can enter their credentials to access their account. The log-in page provides fields for a username and password.
   - **Purpose**: Allows registered users to authenticate themselves granting them access to their personalized account features, including creating and managing recipes, leaving reviews, and accessing their profile.
@@ -241,7 +238,6 @@ These features were chosen to balance functionality with usability, ensuring tha
 
 ![Log In Feature](/docs/readme_images/sign_in.webp)
 ![Log In Feature](/docs/readme_images/sign_in_success.webp)
-
 
 - **Sign Out Page**  
   - **Description**: A page or button that allows logged-in users to log out of their account, ending their session on the site.
@@ -296,7 +292,6 @@ These features were chosen to balance functionality with usability, ensuring tha
 
 ![Profile View Feature](/docs/readme_images/profile.webp)
 ![Profile View Feature](/docs/readme_images/profile_display_column.webp)
-
 
 - **Return Button**  
   - **Description**: A button that allows users to return to their previous page, located on pages such as recipe details or edit recipe, where users may want to navigate back to their previous view.
@@ -522,7 +517,6 @@ The **Review** model represents user reviews for a recipe. It includes the follo
 #### Aggregation and Average Rating
 - The **average_rating()** method in `Recipe` uses aggregation to calculate the average rating across all `Review` instances for a given recipe.
 
-|
 #### Data Deletion
 - The `Recipe` model’s **delete()** method ensures all reviews linked to the recipe are deleted before the recipe itself is removed, maintaining data integrity.
 
@@ -657,7 +651,6 @@ Each image on the site has been carefully selected to support the Recipe Blog’
 - **lucid**: Wireframes were designed using [lucid](https://www.lucidchart.com/) to plan the website layout and functionality.
 - **Dalle**: The website logo was created using Dalle, adding a consistent brand element to the header.
 
-
 #### Python Modules
 
 - **Django Class-Based Views** (`ListView`, `UpdateView`, `DeleteView`, `CreateView`, `DetailView`): Used to manage CRUD (Create, Read, Update, Delete) functionality in a structured way.
@@ -689,7 +682,6 @@ The following external modules and packages were utilized to support core functi
 - **whitenoise==6.8.2**: Simplifies static file serving in production, compressing and caching files to optimize load times.
 
 # Testing
-
 ## Manual Testing:
 
 ### 1. Navigation Bar Functionality
@@ -860,8 +852,6 @@ The following external modules and packages were utilized to support core functi
 
 **Expected Result**: The layout adjusts properly, and all elements are accessible on all screen sizes.
 **Actual Result**: All steps carried out successfully, except for the about us image, which i decided to remove as it did not look good in smaller screen sizes, navbar modified to transform links into dropdown icon, on smaller screen sizes, instead displaying them in a column inside the dropdown, View all recipes also changed to display Recipes in columns instead of rows, profile display also changed to column. 
-
-
 
 **Result Image**:
 ![Responsive Design Removed About Image](/docs/readme_images/about_us_no_image.webp)
@@ -1140,15 +1130,15 @@ In conclusion, this project provided essential learning experiences that will un
 ## Credits
 
 A list of resources and tools that contributed to the development of this project:
+These resources were used in learning and troubleshooting.
 
 - **DALL-E**: Used to generate the website logo.
 - **Pexels**: Source for high-quality images featured on the site.
 - **Django Documentation**:
   - [Class-Based View Mixins](https://docs.djangoproject.com/en/5.1/ref/class-based-views/mixins/): Used to learn about and implement view mixins for enhanced functionality and security.
-  - [Django Documentation](https://docs.djangoproject.com/en/5.1/): Referred to for general Django features, including configuration of static files.
-- **Whitenoise Documentation**: [Whitenoise](https://whitenoise.readthedocs.io/en/latest/): Guided setup for static file handling and optimization in production.
+  - [Django Documentation](https://docs.djangoproject.com/en/5.1/): Referred to for general Django features, including configuration and explanation of static files.
+- **Whitenoise Documentation**: [Whitenoise](https://whitenoise.readthedocs.io/en/latest/): used to learn about static file handling and optimization in production.
 - **YouTube Tutorials**: 
-  - [Django & Python Tutorial Series](https://www.youtube.com/watch?v=cPfvhpdYaNY&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=2) and [Django Tutorial](https://www.youtube.com/watch?v=ZCPhzoK_bg4&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=3): Provided inspiration and foundational setup for the project structure.
+  - [Django & Python Tutorial Series](https://www.youtube.com/watch?v=cPfvhpdYaNY&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=2) and [Django Tutorial](https://www.youtube.com/watch?v=ZCPhzoK_bg4&list=PLXuTq6OsqZjbCSfiLNb2f1FOs8viArjWy&index=3):
+  briefly viewed these two videos to gain inspiration for project base setup, and learn about installing and setting up allauth, all custom code is still my own.
 - **W3Schools Bootstrap 5 Guide**: [Bootstrap 5 Styling](https://www.w3schools.com/bootstrap5/index.php) — Used as a reference for implementing Bootstrap 5 styling and components across the site.
-
-These resources were instrumental in learning, troubleshooting, and refining the project throughout development.
