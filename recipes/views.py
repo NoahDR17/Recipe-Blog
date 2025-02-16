@@ -67,7 +67,7 @@ def profile_view(request):
                   {'user': request.user, 'user_recipes': user_recipes})
 
 
-class RecipeUpdateView(LoginRequiredMixin, UpdateView, UserPassesTestMixin):
+class RecipeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """ View to update an existing recipe """
     model = Recipe
     template_name = 'recipes/edit_recipe.html'
@@ -90,7 +90,7 @@ class RecipeUpdateView(LoginRequiredMixin, UpdateView, UserPassesTestMixin):
         return self.request.user == recipe.author or self.request.user.is_staff
 
 
-class RecipeDeleteView(LoginRequiredMixin, DeleteView, UserPassesTestMixin):
+class RecipeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView ):
     """ View to delete a recipe and associated reviews """
     model = Recipe
     template_name = 'recipes/recipe_confirm_delete.html'

@@ -31,12 +31,16 @@ ALLOWED_HOSTS = [
     'localhost',
     'the-recipe-blog-2ab045f310be.herokuapp.com',
     '8000-noahdr17-recipeblog-zniiy6dxe8e.ws.codeinstitute-ide.net',
+    '8000-noahdr17-recipeblog-iuas8j4gpcz.ws-eu117.gitpod.io'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://the-recipe-blog-2ab045f310be.herokuapp.com',
     'https://*.codeinstitute-ide.net',
     'https://8000-noahdr17-recipeblog-zniiy6dxe8e.ws.codeinstitute-ide.net',
+    'https://8000-noahdr17-recipeblog-iuas8j4gpcz.ws-eu117.gitpod.io/',
+    "https://*.gitpod.io",  # Allow all Gitpod preview URLs
+    "http://localhost:3000",
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'

@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import Avg
+from django.core.validators import MinValueValidator
 
 
 class Recipe(models.Model):
@@ -21,7 +22,7 @@ class Recipe(models.Model):
     description = models.CharField(max_length=500, null=False, blank=False)
     ingredients = models.CharField(max_length=10000, null=False, blank=False)
     instructions = models.CharField(max_length=10000, null=False, blank=False)
-    calories = models.IntegerField()
+    calories = models.IntegerField(validators=[MinValueValidator(0)])
     created_on = models.DateTimeField(auto_now_add=True)
     meal_type = models.CharField(max_length=10,
                                  choices=MEAL_TYPE_CHOICES,
