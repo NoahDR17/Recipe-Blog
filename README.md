@@ -26,6 +26,7 @@
     - [Imagery](#imagery)
 - [Technologies](#technologies)
 - [Testing](#testing)
+- [Resubmission Changes](#resubmission)
 - [Deployment](#deployment)
   - [Version Control](#version-control)
   - [Heroku Deployment](#heroku-deployment)
@@ -1006,6 +1007,142 @@ After further investigation, I discovered that the link is generated within Alla
 To resolve this, I copied the entire Allauth folder into my project’s root directory, modified the relevant code in `forms.py`, and removed the block responsible for rendering the "Forgot Password" link. This effectively removed the link from the login form. 
 
 After spending significant time investigating the problem, I decided to leave it as is and focus on other tasks. If time permits, I plan to revisit this issue and explore a more permanent solution.
+
+# Resubmission 
+
+## Fixing Mixin Inheritance Order
+
+### Issue
+In both the `RecipeUpdateView` and `RecipeDeleteView` classes, the incorrect inheritance order of mixins caused a security issue where user verification was not being performed before executing update or delete actions.
+
+### Problem: Incorrect Mixin Order
+In the original implementations:
+
+#### **RecipeUpdateView (Incorrect)**
+```python
+class RecipeUpdateView(LoginRequiredMixin, UpdateView, UserPassesTestMixin):
+```
+#### **RecipeDeleteView (Incorrect)**
+```python
+class RecipeDeleteView(LoginRequiredMixin, DeleteView, UserPassesTestMixin):
+```
+#### Why This Was a Problem? 
+
+UpdateView and DeleteView were being executed before UserPassesTestMixin, meaning unauthorised users could trigger updates or deletions before being properly validated.
+
+**Solution**: Correcting Mixin Order
+To enforce proper user verification before executing update or delete actions, UserPassesTestMixin must be placed before UpdateView and DeleteView.
+
+- **RecipeUpdateView (Fixed)**
+```python
+class RecipeUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+```
+
+- **RecipeDeleteView (Fixed)**
+```python
+class RecipeDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+```
+#### Why This Fix Works
+LoginRequiredMixin ensures the user is authenticated before anything else.
+UserPassesTestMixin runs its permission check before proceeding to UpdateView or DeleteView.
+The update or delete action is only executed after authentication and verification, preventing unauthorised modifications.
+
+By fixing the inheritance order, unauthorised users can no longer update or delete recipes, enforcing proper access control.
+
+## Manual Test: Verifying the Fix for Mixin Inheritance Order
+
+This manual test ensures that the corrected inheritance order in `RecipeUpdateView` and `RecipeDeleteView` properly enforces authentication and authorization before allowing updates or deletions.
+
+## Test Objective  
+To verify that an **unauthorized user** cannot update or delete a recipe before authentication and permission checks are performed.
+
+---
+
+## Test Case: Unauthorised User Should Not Be Able to Update/delete a Recipe  
+
+### **Steps:**  
+- **Log out** of the application (if already logged in).  
+- Attempt to access the **recipe update/delete URL** directly in the browser:  
+```bash
+/recipes/{recipe_id}/edit/
+```
+```bash
+/recipes/{recipe_id}/delete/
+```
+### **Expected Result:**  
+- The user, if not signed in, should be redirected to the Signin page because LoginRequiredMixin is triggered first, after signing in, if the account the user signed in on is not the owner of the recipe, than the (403 Forbidden) page should be displayed, enforced by UserPassesTestMixin.
+
+- If logged in as a different user (not the owner of the recipe), the (403 Forbidden) error page should be displayed, enforced by UserPassesTestMixin.
+
+### **Solution:**  
+- All Results were as expected.
+
+## Fixing Negative Calorie Count Issue
+
+### **Issue**
+Initially, the `calories` field in the `Recipe` model allowed negative values. This was incorrect because a recipe cannot have a negative calorie count.
+
+### **Problem:** Lack of Validation:
+In the original model, the `calories` field was defined without any restrictions:
+
+```python
+class Recipe(models.Model):
+    ...
+    calories = models.IntegerField()
+    ...
+```
+This meant that users could input negative values, leading to incorrect nutritional data.
+
+### Solution: Implementing "MinValueValidator"
+To ensure that calorie values cannot be negative, I added Django’s built-in MinValueValidator to enforce a minimum value of 0.
+
+#### Updated Model (Fixed):
+
+``` python 
+from django.core.validators import MinValueValidator
+
+class Recipe(models.Model):
+    ...
+    calories = models.IntegerField(validators=[MinValueValidator(0)])
+    ...
+```
+
+#### Why This Fix Works:
+- MinValueValidator(0) ensures that the calories field only accepts values ≥ 0.
+- If a user tries to enter a negative value, Django will display a validation error.
+
+## Manual Test: Verifying Calories Validation
+
+To confirm that the fix is working correctly, follow these steps:
+
+---
+
+## Test Case: Ensure Negative Values Are Rejected
+
+### **Steps:**
+
+- Attempt to create or update a recipe with a **negative calorie count**.
+
+### **Expected Result:**
+
+- A **validation error message** should be displayed, preventing submission.  
+- Example error message:
+
+  ```plaintext
+  Ensure this value is greater than or equal to 0.
+
+## Test Case: Ensure Positive Values Are Accepted
+
+### **Steps:**
+- Fill out all required fields.
+- Add a recipe with a positive calorie value (e.g., calories = 500).
+- Save the recipe and confirm that it is stored correctly.
+
+### **Expected Result:**
+- The recipe should be saved successfully without errors.
+
+### **Actual Result:**
+- The recipe is saved successfully without errors.
 
 ## Deployment
 
